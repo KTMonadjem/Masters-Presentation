@@ -480,7 +480,8 @@
 	\begin{myitemize}
 		\item Synchronous Artificial Neural Network (SANN) encapsulated by Runtime Enforcement (RE).
 		\item SANN I/O monitored and enforced to be \textit{safe}.
-		\item SNN is synchronous and 
+		\item SNN is entirely synchronous and time analysable.
+		\item SNN is formally defined (Definition ~\ref{def:ssann}).
 	\end{myitemize}
 \end{frame}
 
@@ -563,67 +564,6 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame} \frametitle{Results}
-	\begin{table}[t]
-		\centering
-		\caption{Design and overhead of the policies used in the AV system}
-		\label{table:policies}
-		\begin{tabular}{|p{0.25\linewidth}|p{0.06\linewidth}|p{0.12\linewidth}|p{0.06\linewidth}|p{0.11\linewidth}|p{0.1\linewidth}|}
-			\hline Policy & States & Transitions & Timed & Execution Time (us) & Overhead (\%) \\ \hline   
-			%\multicolumn{6}{|p{0.70\linewidth}|}{\ac{AV}} \\ \hline
-			$None$ 						&  &  &  & 736 & 0 \\
-			$\varphi_{cnn}$ 			& 1 & 15 & No & 764 & 3.8 \\
-			$\varphi_{drive}$ 			& 1 & 4 & No & 740 & 0.54 \\
-			$\varphi_{car}$ 			& 1 & 7 & No & 774 & 5.1 \\
-			$\varphi_{ped}$ 			& 2 & 56 & Yes & 767 & 4.2 \\
-			$\varphi_{cnn} \wedge \varphi_{drive} \wedge \varphi_{car} \wedge \varphi_{ped}$ 	
-			& 2 & 99 & Yes & 803 & 9.1 \\ \hline      
-		\end{tabular}
-	\end{table}
-\end{frame}
-
-\begin{frame} \frametitle{Results (cont.)}
-	\begin{table}[h]
-		\centering
-		\caption{Results of the AV system with and without the enforced policies}
-		\label{table:avenf1}
-		\begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
-			\hline Number of epochs trained & Percentage accidents & Average minutes to first accident per day & Average speed (km/h) & Percentage bad brakes \\ \hline
-			\multicolumn{5}{|p{0.75\linewidth}|}{Not enforced} \\ \hline
-			0 & 100	 & 3.21 & 98 & 19 \\
-			1 & 100 & 3.3 & 93 & 19 \\
-			10 & 100 & 3.8 & 81 & 57 \\
-			100 & 100 & 5.35 & 59 & 24 \\
-			1000 & 100 & 5.31 & 58 & 27 \\
-			10000 & 97.5 & 25.3 & 30 & 70 \\ \hline                     
-		\end{tabular}
-	\end{table}
-\end{frame}
-\begin{frame} \frametitle{Results (cont.)}
-	\begin{table}[h]
-		\centering
-		\caption{Results of the AV system with and without the enforced policies}
-		\label{table:avenf2}
-		\begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
-			\hline Number of epochs trained & Percentage accidents & Average minutes to first accident per day & Average speed (km/h) & Percentage bad brakes \\ \hline
-			\multicolumn{5}{|p{0.75\linewidth}|}{Enforced} \\ \hline
-			0 & 757 & 756 & 45 & 0.7 \\
-			1 & 702 & 828 & 47 & 4.2 \\
-			10 & 885 & 589 & 37 & 20 \\
-			100 & 795 & 726 & 41 & 17 \\
-			1000 & 805 & 710 & 40 & 18 \\
-			10000 & 636 & 910 & 30 & 27 \\ \hline                    
-		\end{tabular}
-	\end{table}
-\end{frame}
-
-\begin{frame} \frametitle{Results (cont.)}
-	\begin{figure}[t]
-		\centering
-		\scalebox{1}{\input{fig/av-graph.tex}}
-		\caption{Line graph showing the performance of the enforced system compared to the un-enforced system \label{fig:avgraph}}
-	\end{figure}
-\end{frame}
 %\begin{frame} \frametitle{Price / Demand example}
 	%\centering
 	%\includegraphics[scale=0.65]{fig/ess.pdf}
@@ -670,17 +610,73 @@
 
 \begin{frame}\frametitle{Meta neural networks}
 	\begin{itemize}
-		\item Using an ensemble of meta neural networks~\footcite{ensembleANN}, it was shown that the combined accuracy of 3 SANNs was greater than the accuracy of any one SANN.
+		\item Using an meta neural network ensemble~\footcite{ensembleANN} of SANNs, it was shown that the combined accuracy of 3 SANNs was greater than the accuracy of any one SANN.
 		\item Increase of up to 10\% from individual SANN accuracy.
 		\item Retain synchronous semantics.
 		\item Potential for WCRT analysis. 
 	\end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Runtime enforcement}
-	\begin{itemize}
-		\item TBD.
-	\end{itemize}
+\begin{frame} \frametitle{SNNs}
+	\begin{table}[t]
+		\centering
+		\caption{Design and overhead of the policies used in the AV system}
+		\label{table:policies}
+		\begin{tabular}{|p{0.25\linewidth}|p{0.06\linewidth}|p{0.12\linewidth}|p{0.06\linewidth}|p{0.11\linewidth}|p{0.1\linewidth}|}
+			\hline Policy & States & Transitions & Timed & Execution Time (us) & Overhead (\%) \\ \hline   
+			%\multicolumn{6}{|p{0.70\linewidth}|}{\ac{AV}} \\ \hline
+			$None$ 						&  &  &  & 736 & 0 \\
+			$\varphi_{cnn}$ 			& 1 & 15 & No & 764 & 3.8 \\
+			$\varphi_{drive}$ 			& 1 & 4 & No & 740 & 0.54 \\
+			$\varphi_{car}$ 			& 1 & 7 & No & 774 & 5.1 \\
+			$\varphi_{ped}$ 			& 2 & 56 & Yes & 767 & 4.2 \\
+			$\varphi_{cnn} \wedge \varphi_{drive} \wedge \varphi_{car} \wedge \varphi_{ped}$ 	
+			& 2 & 99 & Yes & 803 & 9.1 \\ \hline      
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame} \frametitle{SNNs (cont.)}
+	\begin{table}[h]
+		\centering
+		\caption{Results of the AV system with and without the enforced policies}
+		\label{table:avenf1}
+		\begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
+			\hline Number of epochs trained & Percentage accidents & Average minutes to first accident per day & Average speed (km/h) & Percentage bad brakes \\ \hline
+			\multicolumn{5}{|p{0.75\linewidth}|}{Not enforced} \\ \hline
+			0 & 100	 & 3.21 & 98 & 19 \\
+			1 & 100 & 3.3 & 93 & 19 \\
+			10 & 100 & 3.8 & 81 & 57 \\
+			100 & 100 & 5.35 & 59 & 24 \\
+			1000 & 100 & 5.31 & 58 & 27 \\
+			10000 & 97.5 & 25.3 & 30 & 70 \\ \hline                     
+		\end{tabular}
+	\end{table}
+\end{frame}
+\begin{frame} \frametitle{SNNs (cont.)}
+	\begin{table}[h]
+		\centering
+		\caption{Results of the AV system with and without the enforced policies}
+		\label{table:avenf2}
+		\begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
+			\hline Number of epochs trained & Percentage accidents & Average minutes to first accident per day & Average speed (km/h) & Percentage bad brakes \\ \hline
+			\multicolumn{5}{|p{0.75\linewidth}|}{Enforced} \\ \hline
+			0 & 757 & 756 & 45 & 0.7 \\
+			1 & 702 & 828 & 47 & 4.2 \\
+			10 & 885 & 589 & 37 & 20 \\
+			100 & 795 & 726 & 41 & 17 \\
+			1000 & 805 & 710 & 40 & 18 \\
+			10000 & 636 & 910 & 30 & 27 \\ \hline                    
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame} \frametitle{SNNs (cont.)}
+	\begin{figure}[t]
+		\centering
+		\scalebox{1}{\input{fig/av-graph.tex}}
+		\caption{Line graph showing the performance of the enforced system compared to the un-enforced system \label{fig:avgraph}}
+	\end{figure}
 \end{frame}
 
 \section{Conclusion}
