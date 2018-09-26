@@ -1,0 +1,430 @@
+%               -*- LaTeX -*-
+%% logos -------------------------------------------------------------------%%
+
+\newcommand{\pascal}{\mbox{\textsc{Pascal}}}
+\newcommand{\lisp}{\mbox{\textsc{Lisp}}}
+\newcommand{\ada}{\mbox{\textsc{Ada}}}
+\newcommand{\fortran}{\mbox{\textsc{Fortran}}}
+\newcommand{\hpf}{High Performance \fortran}
+\newcommand{\occam}{\mbox{\textsc{Occam}}}
+\newcommand{\perl}{\mbox{\textsc{Perl}}}
+\newcommand{\java}{\mbox{\textsc{Java}}}
+
+\newcommand{\merlin}{\mbox{\textsc{Merlin-Gerin}}}
+\newcommand{\schneider}{\mbox{\textsc{Schneider Electric}}}
+\newcommand{\dassault}{\mbox{\textsc{Dassault Aviation}}}
+\newcommand{\aerospatiale}{\mbox{\textsc{A\'erospatiale}}}
+\newcommand{\saab}{\mbox{\textsc{SAAB Military Aircrafts}}}
+\newcommand{\snecma}{\mbox{\textsc{Snecma}}}
+\newcommand{\motorola}{\mbox{\textsc{Motorola}}}
+\newcommand{\texas}{\mbox{\textsc{Texas Instruments}}}
+\newcommand{\intel}{\mbox{\textsc{Intel}}}
+\newcommand{\stmicro}{\mbox{\textsc{ST~Microelectronics}}}
+\newcommand{\thomson}{\mbox{\textsc{Thomson}}}
+\newcommand{\cadence}{\mbox{\textsc{Cadence}}}
+\newcommand{\synopsys}{\mbox{\textsc{Synopsys}}}
+\newcommand{\parades}{\mbox{\textsc{Parades}}}
+\newcommand{\athys}{\mbox{\textsc{Athys}}}
+\newcommand{\comau}{\mbox{\textsc{Comau}}}
+\newcommand{\maif}{\mbox{\textsc{Maif}}}
+\newcommand{\nasa}{\mbox{\textsc{Nasa}}}
+\newcommand{\polyspace}{\mbox{\textsc{PolySpace}}}
+\newcommand{\ftrd}{\mbox{France Telecom R\&D}}
+\newcommand{\esprit}{\mbox{\textsc{Esprit}}}
+\newcommand{\crisys}{\mbox{\textsc{Crisys}}}
+
+\newcommand{\alidecs}{\mbox{\textsc{Alidecs}}}
+\newcommand{\mimosa}{\mbox{\textsc{Mimosa}}}
+\newcommand{\synalp}{\mbox{\textsc{Synalp}}}
+\newcommand{\artist}{\mbox{\textsc{Artist}}}
+\newcommand{\define}{\mbox{\textsc{Define}}}
+\newcommand{\greco}{GRECO Automatique Action C2A}
+\newcommand{\inrets}{\mbox{\textsc{Inrets}}}
+\newcommand{\ifremer}{\mbox{\textsc{Ifremer}}}
+\newcommand{\inria}{\mbox{\textsc{Inria}}}
+\newcommand{\irisa}{\mbox{\textsc{Irisa}}}
+\newcommand{\imag}{\mbox{\textsc{Imag}}}
+\newcommand{\irccyn}{\mbox{\textsc{Irccyn}}}
+\newcommand{\ircyn}{\mbox{\textsc{Ircyn}}}
+\newcommand{\spectre}{\mbox{\textsc{Spectre}}}
+\newcommand{\verimag}{\mbox{\textsc{Verimag}}}
+\newcommand{\verilog}{\mbox{\textsc{Verilog}}}
+\newcommand{\vasy}{\mbox{\textsc{Vasy}}}
+\newcommand{\ensimag}{\mbox{\textsc{Ensimag}}}
+\newcommand{\pampa}{\mbox{\textsc{Pampa}}}
+\newcommand{\epatr}{\mbox{\textsc{Ep-Atr}}}
+\newcommand{\espresso}{\mbox{\textsc{Espresso}}}
+\newcommand{\vertex}{\mbox{\textsc{Vertecs}}}
+\newcommand{\meije}{\mbox{\textsc{Meije}}}
+\newcommand{\tick}{\mbox{\textsc{Tick}}}
+\newcommand{\sosso}{\mbox{\textsc{Sosso}}}
+\newcommand{\ostre}{\mbox{\textsc{Ostre}}}
+\newcommand{\aoste}{\mbox{\textsc{Aoste}}}
+\newcommand{\popart}{\mbox{\textsc{Pop Art}}}
+\newcommand{\bip}{\mbox{\textsc{Bip}}}
+\newcommand{\movi}{\mbox{\textsc{Movi}}}
+\newcommand{\mysharp}{\mbox{\textsc{Sharp}}}
+\newcommand{\icare}{\mbox{\textsc{Icare}}}
+\newcommand{\apache}{\mbox{\textsc{Apache}}}
+\newcommand{\oasis}{\mbox{\textsc{Oasis}}}
+\newcommand{\genie}{\mbox{\textsc{G\'enie}}}
+\newcommand{\ucpath}{\mbox{\textsc{Path}}}
+\newcommand{\atria}{\mbox{\textsc{Atria}}}
+\newcommand{\praxitele}{\mbox{\textsc{Praxit\`ele}}}
+\newcommand{\gravir}{\mbox{\textsc{Gravir}}}
+\newcommand{\imagis}{\mbox{\textsc{iMAGIS}}}
+\newcommand{\tolere}{\mbox{\textsc{Tol\`ere}}}
+\newcommand{\cnam}{\mbox{\textsc{Cnam}}}
+\newcommand{\agos}{\mbox{\textsc{Agos}}}
+\newcommand{\liafa}{\mbox{\textsc{Liafa}}}
+\newcommand{\euromicro}{\mbox{\textsc{Euromicro}}}
+\newcommand{\laas}{\mbox{\textsc{Laas}}}
+\newcommand{\supelec}{\mbox{\textsc{Sup\'elec}}}
+\newcommand{\teledimos}{\mbox{\textsc{Teledimos}}}
+\newcommand{\automate}{\mbox{\textsc{Automate}}}
+\newcommand{\asfalte}{\mbox{\textsc{Asfalte}}}
+
+\newcommand{\objectweb}{\mbox{\textsc{ObjectWeb}}}
+\newcommand{\fractal}{\mbox{\textsc{Fractal}}}
+\newcommand{\think}{\mbox{\textsc{Think}}}
+\newcommand{\julia}{\mbox{\textsc{Julia}}}
+\newcommand{\giotto}{\mbox{\textsc{Giotto}}}
+\newcommand{\giventake}{\mbox{\textsc{Give-N-Take}}}
+\newcommand{\airbus}{\mbox{\textsc{Airbus}}}
+\newcommand{\rafale}{\mbox{\textsc{Rafale}}}
+\newcommand{\pyrros}{\mbox{\textsc{Pyrros}}}
+\newcommand{\polis}{\mbox{\textsc{Polis}}}
+\newcommand{\smartahs}{\mbox{\textsc{Smart-Ahs}}}
+\newcommand{\shift}{\mbox{\textsc{Shift}}}
+\newcommand{\shic}{\mbox{\textsc{Shic}}}
+\newcommand{\ocrep}{\mbox{\texttt{ocrep}}}
+\newcommand{\screp}{\mbox{\texttt{screp}}}
+\newcommand{\cprep}{\mbox{\texttt{cprep}}}
+\newcommand{\ocpn}{\mbox{\texttt{ocpn}}}
+\newcommand{\scdata}{\mbox{\texttt{scdata}}}
+\newcommand{\asig}{\mbox{\texttt{asig}}}
+\newcommand{\poc}{\mbox{\texttt{poc}}}
+\newcommand{\ludivin}{\mbox{\texttt{ludivin}}}
+\newcommand{\positionviewer}{\mbox{\texttt{positionviewer}}}
+\newcommand{\pandore}{\mbox{\textsc{Pandore}}}
+\newcommand{\matou}{\mbox{\textsc{Matou}}}
+\newcommand{\lustre}{\mbox{\textsc{Lustre}}}
+\newcommand{\lucid}{\mbox{\textsc{Lucid}}}
+\newcommand{\lucy}{\mbox{\textsc{Lucy}}}
+\newcommand{\signal}{\mbox{\textsc{Signal}}}
+\newcommand{\polychrony}{\mbox{\textsc{Polychrony}}}
+\newcommand{\gti}{\mbox{\textsc{Signal}\textit{GTi}}}
+\newcommand{\sildex}{\mbox{\textsc{Sildex}}}
+\newcommand{\sigali}{\mbox{\textsc{Sigali}}}
+\newcommand{\syndex}{\mbox{\textsc{SynDEx}}}
+\newcommand{\aaa}{\mbox{AAA}}
+\newcommand{\esterel}{\mbox{\textsc{Esterel}}}
+\newcommand{\studio}{\mbox{\textsc{Studio}}}
+\newcommand{\tech}{\mbox{\textsc{Technologies}}}
+\newcommand{\xes}{\mbox{\textsc{Xes}}}
+\newcommand{\xeve}{\mbox{\textsc{Xeve}}}
+\newcommand{\tempest}{\mbox{\textsc{Tempest}}}
+\newcommand{\saxo}{\mbox{\textsc{Saxo}}}
+\newcommand{\saga}{\mbox{\textsc{Saga}}}
+\newcommand{\sao}{\mbox{SAO+}}
+\newcommand{\scade}{\mbox{\textsc{Scade}}}
+\newcommand{\lesar}{\mbox{\textsc{Lesar}}}
+\newcommand{\cesar}{\mbox{\textsc{Cesar}}}
+\newcommand{\xesar}{\mbox{\textsc{Xesar}}}
+\newcommand{\argos}{\mbox{\textsc{Argos}}}
+\newcommand{\pollux}{\mbox{\textsc{Pollux}}}
+\newcommand{\aldebaran}{\mbox{\textsc{Ald\'ebaran}}}
+\newcommand{\evaluator}{\mbox{\textsc{Evaluator}}}
+\newcommand{\synccharts}{\mbox{\textsc{SyncCharts}}}
+\newcommand{\statecharts}{\mbox{\textsc{StateCharts}}}
+\newcommand{\starcharts}{\mbox{\textsc{*Charts}}}
+\newcommand{\jester}{\mbox{\textsc{Jester}}}
+\newcommand{\syntax}{\mbox{\textsc{Syntax}}}
+\newcommand{\csml}{\mbox{CSML}}
+\newcommand{\sml}{\mbox{SML}}
+\newcommand{\ptolemy}{\mbox{\textsc{Ptolemy}}}
+\newcommand{\sccausal}{\mbox{\textsc{ScCausal}}}
+\newcommand{\tiger}{\mbox{\textsc{TiGeR}}}
+\newcommand{\vis}{\mbox{\textsc{Vis}}}
+\newcommand{\blif}{\mbox{\textsc{Blif}}}
+\newcommand{\blifmv}{\mbox{\textsc{Blif-MV}}}
+\newcommand{\scc}{\mbox{\textsc{scc}}}
+\newcommand{\orccad}{\mbox{\textsc{Orccad}}}
+\newcommand{\simparc}{\mbox{\textsc{Simparc}}}
+\newcommand{\vxworks}{\mbox{\textsc{VxWorks}}}
+\newcommand{\maestro}{\mbox{\textsc{MaestRO}}}
+\newcommand{\kronos}{\mbox{\textsc{Kronos}}}
+\newcommand{\polka}{\mbox{\textsc{Polka}}}
+\newcommand{\hytech}{\mbox{\textsc{HyTech}}}
+\newcommand{\mathematica}{\mbox{\textsc{Mathematica}}}
+\newcommand{\mathlab}{\mbox{\textsc{MathLab}}}
+\newcommand{\scilab}{\mbox{\textsc{SciLab}}}
+\newcommand{\maple}{\mbox{\textsc{Maple}}}
+\newcommand{\fctools}{\mbox{\textsc{Fc2tools}}}
+\newcommand{\inventor}{\mbox{\textsc{Inventor}}}
+\newcommand{\fabule}{\mbox{\textsc{Fabule}}}
+\newcommand{\rapidap}{\mbox{\textsc{Rapidap}}}
+\newcommand{\opengl}{\mbox{\textsc{Open-GL}}}
+\newcommand{\cycab}{\mbox{\textsc{Cycab}}}
+
+\newcommand{\linux}{\mbox{\textsc{Linux}}}
+\newcommand{\irix}{\mbox{\textsc{Irix}}}
+\newcommand{\unix}{\mbox{\textsc{Unix}}}
+\newcommand{\solaris}{\mbox{\textsc{Solaris}}}
+\newcommand{\chorus}{\mbox{\textsc{Chorus}}}
+\newcommand{\internet}{\mbox{\textsc{Internet}}}
+\newcommand{\nervia}{\mbox{\textsc{Nervia}}}
+\newcommand{\windows}{\mbox{\textsc{Windows-NT}}}
+
+%% macros ------------------------------------------------------------------%%
+
+\newcommand{\AG}{{A}lain {G}irault}
+\newcommand{\POPL}{{S}ymposium on {P}rinciples of {P}rogramming {L}anguages}
+\newcommand{\KP}{\mbox{\ensuremath{\coulR{K_P}}}}
+\newcommand{\KI}{\mbox{\ensuremath{\coulB{K_I}}}}
+\newcommand{\KD}{\mbox{\ensuremath{\coulV{K_D}}}}
+\newcommand{\PID}{\mbox{\coulR{P}\coulB{I}\coulV{D}}}
+\newcommand{\pos}[1]{\mbox{\ensuremath{#1 \; m}}}
+\newcommand{\vel}[1]{\mbox{\ensuremath{#1 \; ms^{-1}}}}
+\newcommand{\acc}[1]{\mbox{\ensuremath{#1 \; ms^{-2}}}}
+\newcommand{\mynumber}{n\ensuremath{^{\circ}}}
+\newcommand{\Mynumber}{N\ensuremath{^{\circ}}}
+\providecommand{\degre}{\ensuremath{^{\circ}}}
+\newcommand{\DAG}{\mbox{\textsc{Dag}}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\proprio}{\mbox{\emph{owner}}}
+\newcommand{\depend}{\mbox{\emph{depends}}}
+\newcommand{\besoin}{\mbox{\emph{needs}}}
+\newcommand{\hun}{\hspace{1cm}}
+\newcommand{\fifo}{\!\!\!\!\mbox{\Large{$\sqsupset$}}}
+\newcommand{\paral}{\ensuremath{[\!]}}
+\newcommand{\beha}[1]{\ensuremath{[\![ #1 ]\!]}}
+\newcommand{\pomset}{\mbox{\em pomset}}
+\newcommand{\pomsets}{\mbox{\em pomsets}}
+\newcommand{\lpo}{\mbox{lpo}}
+\newcommand{\lpos}{\mbox{lpos}}
+\newcommand{\trd}{\mbox{\em rdt}}
+\newcommand{\fsted}{\mbox{\em fdlts}}
+\newcommand{\fsten}{\mbox{\em fdnts}}
+\newcommand{\fstes}{\mbox{\em fdsts}}
+\newcommand{\fstod}{\mbox{\em fdots}}
+\newcommand{\oldvdun}[1]{\ensuremath{\;\stackrel{#1}{\vdash}\;}}
+\newcommand{\newvdun}[1]{\ensuremath{\;\overset{\raisebox{-3ex}{\scriptsize{\ensuremath{#1}}}}{\vdash}\;}}
+\newcommand{\vdun}[1]{\oldvdun{#1}}
+\newcommand{\flun}[1]{\ensuremath{\;\stackrel{#1}{\rightarrow}\;}}
+\newcommand{\fldeux}[2]{\ensuremath{\;\stackrel{#1}{\rightarrow}_{#2}\;}}
+\newcommand{\GI}{\ensuremath{{\cal G}^i}}
+\newcommand{\FI}{\ensuremath{{\cal F}^i}}
+\newcommand{\FV}{\ensuremath{{\cal F}^v}}
+\newcommand{\GIH}{\ensuremath{{\cal G}^i(R_H \cup H)}}
+\newcommand{\FIH}{\ensuremath{{\cal F}^i(R_H \cup H)}}
+\newcommand{\FVH}{\ensuremath{{\cal F}^v(R_H \cup H)}}
+\newcommand{\cercle}[1]{\mbox{$\bigcirc \:\!\!\!\!\!\!\mbox{\scriptsize{\bf #1}}\;$}} 
+\newcommand{\ignore}[1]{}
+\newcommand{\now}{\coulB{\ding{234}}}
+\newcommand{\foorp}{\ensuremath{\Box}}
+\newcommand{\lra}{\ensuremath{\longrightarrow}}
+\newcommand{\letrec}[2]{letrec\:\{#1\}\:in\:#2}
+\newcommand{\assigned}[2][]{\ensuremath{\texttt{Assigned}^{#1}_{#2}}}
+%\newcommand{\received}[2][]{\ensuremath{\texttt{Received}^{#1}_{#2}}}
+\newcommand{\sent}[2]{\ensuremath{\texttt{Sent}_{\texttt{#1}}^{\texttt{#2}}}}
+\newcommand{\known}[2][]{\ensuremath{\texttt{Known}^{#1}_{#2}}}
+\newcommand{\need}[2][]{\ensuremath{\texttt{Need}^{#1}_{#2}}}
+\newcommand{\queue}[2][]{\ensuremath{\texttt{Queue}^{#1}_{#2}}}
+\newcommand{\sinput}[1]{\ensuremath{\texttt{Input}^{#1}}}
+\newcommand{\cinfinite}{${\cal C}^{\infty}$-function}
+\newcommand{\smiley}{\ensuremath{\stackrel{\circ|\circ}{\smile}}}
+\newcommand{\frowney}{\ensuremath{\stackrel{\circ|\circ}{\frown}}}
+\newcommand{\defeq}{\ensuremath{\;\stackrel{\triangle}{=}\;}}
+\newcommand{\invcond}[2]{\ensuremath{\textsc{Inv}_{#1}(#2)}}
+\newcommand{\initcondacc}[2]{\ensuremath{\textsc{InitAcc}_{#1}(#2)}}
+\newcommand{\initcondvel}[2]{\ensuremath{\textsc{InitVel}_{#1}(#2)}}
+\newcommand{\displayfrac}[2]{\ensuremath{\displaystyle{\frac{#1}{#2}}}}
+\newcommand{\pair}[2]{\ensuremath{\langle\text{#1}, \text{#2}\rangle}}
+\newcommand{\triplet}[3]{\ensuremath{\langle\text{#1},\text{#2},\text{#3}\rangle}}
+\newcommand{\mathpair}[2]{\ensuremath{\langle #1, #2 \rangle}}
+\newcommand{\mathtriplet}[3]{\ensuremath{\langle #1, #2, #3 \rangle}}
+
+%% math caligraphy ---------------------------------------------------------%%
+
+\newcommand{\ALG}{\ensuremath{\mathcal{A}\mathit{lg}}}
+\newcommand{\ARC}{\ensuremath{\mathcal{A}\mathit{rc}}}
+\newcommand{\DIS}{\ensuremath{\mathcal{D}\mathit{is}}}
+\newcommand{\EXE}{\ensuremath{\mathcal{E}\!\mathit{xe}}}
+\newcommand{\FAI}{\ensuremath{\mathcal{N}\!\mathit{pf}}}
+\newcommand{\REA}{\ensuremath{\mathcal{R}\!\mathit{tc}}}
+\newcommand{\RT}{\ensuremath{\mathcal{R}\!\mathit{t}}}
+\newcommand{\REL}{\ensuremath{\mathcal{R}\!\mathit{el}}}
+\newcommand{\MCS}{\ensuremath{\mathcal{M}\!\mathit{cs}}}
+\newcommand{\BCF}{\ensuremath{\mathcal{B}\!\mathit{cf}}}
+\newcommand{\RBSA}{\ensuremath{\mathcal{RBS}\!\mathcal{A}}}
+\newcommand{\MC}{\ensuremath{\mathcal{C}}}
+\newcommand{\MD}{\ensuremath{\mathcal{D}}}
+\newcommand{\MG}{\ensuremath{\mathcal{G}}}
+\newcommand{\MI}{\ensuremath{\mathcal{I}}}
+\newcommand{\ML}{\ensuremath{\mathcal{L}}}
+\newcommand{\MO}{\ensuremath{\mathcal{O}}}
+\newcommand{\MP}{\ensuremath{\mathcal{P}}}
+\newcommand{\MQ}{\ensuremath{\mathcal{Q}}}
+\newcommand{\MS}{\ensuremath{\mathcal{S}}}
+\newcommand{\MT}{\ensuremath{\mathcal{T}}}
+
+%% math sets ---------------------------------------------------------------%%
+
+\newcommand{\NN}{\ensuremath{\mathbb{N}}}
+\newcommand{\ZZ}{\ensuremath{\mathbb{Z}}}
+\newcommand{\QQ}{\ensuremath{\mathbb{Q}}}
+\newcommand{\RR}{\ensuremath{\mathbb{R}}}
+\newcommand{\CC}{\ensuremath{\mathbb{C}}}
+\newcommand{\BB}{\ensuremath{\mathbb{B}}}
+\newcommand{\ZERO}{\ensuremath{\mathbbold{0}}}
+\newcommand{\UN}{\ensuremath{\mathbbold{1}}}
+
+%% tau-divers --------------------------------------------------------------%%
+
+\newcommand{\tautran}{\mbox{$\tau$-transition}}
+\newcommand{\tautrans}{\mbox{$\tau$-transitions}}
+\newcommand{\tautest}{\mbox{$\tau$-test}}
+\newcommand{\tautests}{\mbox{$\tau$-tests}}
+\newcommand{\tauact}{\mbox{$\tau$-action}}
+\newcommand{\tauacts}{\mbox{$\tau$-actions}}
+\newcommand{\tauloop}{\mbox{$\tau$-loop}}
+\newcommand{\tauloops}{\mbox{$\tau$-loops}}
+
+%% operations syndex -------------------------------------------------------%%
+
+\newcommand{\comp}{\texttt{comp}}
+\newcommand{\comps}{\texttt{comps}}
+\newcommand{\mem}{\texttt{mem}}
+\newcommand{\mems}{\texttt{mems}}
+\newcommand{\extio}{\texttt{extio}}
+\newcommand{\extios}{\texttt{extios}}
+\newcommand{\comm}{\texttt{comm}}
+\newcommand{\comms}{\texttt{comms}}
+
+%% mots reserves algorithmiques --------------------------------------------%%
+
+\newcommand{\prog}{\mbox{\bf program}}
+\newcommand{\proc}{\mbox{\bf procedure}}
+\newcommand{\fonc}{\mbox{\bf function}}
+\newcommand{\var}{\mbox{\bf var}}
+\newcommand{\deb}{\mbox{\bf begin}}
+\newcommand{\fin}{\mbox{\bf end}}
+\newcommand{\si}{\mbox{\bf if}}
+\newcommand{\alors}{\mbox{\bf then}}
+\newcommand{\sinon}{\mbox{\bf else}}
+\newcommand{\fsi}{\mbox{\bf end if}}
+\newcommand{\tque}{\mbox{\bf while}}
+\newcommand{\faire}{\mbox{\bf do}}
+\newcommand{\ftque}{\mbox{\bf end while}}
+\newcommand{\pour}{\mbox{\bf forall}}
+\newcommand{\fpour}{\mbox{\bf end for}}
+\newcommand{\envoi}{\mbox{\bf send}}
+\newcommand{\depuis}{\mbox{\bf from}}
+\newcommand{\vers}{\mbox{\bf to}}
+\newcommand{\attdre}{\mbox{\bf wait}}
+\newcommand{\retour}{\mbox{\bf return}}
+\newcommand{\exit}{\mbox{\bf exit}}
+\newcommand{\casse}{\mbox{\bf break}}
+\newcommand{\affich}{\mbox{\bf print}}
+\newcommand{\etlog}{\mbox{\bf and}}
+\newcommand{\oulog}{\mbox{\bf or}}
+\newcommand{\defaut}{\mbox{\bf default}}
+\newcommand{\vrai}{\mbox{\bf true}}
+\newcommand{\faux}{\mbox{\bf false}}
+
+%% operateurs lustre -------------------------------------------------------%%
+
+\newcommand{\code}[1]{\texttt{#1}} % to be redefined at will
+\newcommand{\arrow}{\code{->}}
+\newcommand{\darrow}{\code{=>}}
+\newcommand{\pre}{\code{pre}}
+\newcommand{\when}{\code{when}}
+\newcommand{\current}{\code{current}}
+\newcommand\ttpre{\code{pre}}
+\newcommand\ttwhen{\code{when}}
+\newcommand\ttcurrent{\code{current}}
+\newcommand\ttgo{\code{go}}
+\newcommand\ttgoto{\code{goto}}
+\newcommand\ttread{\code{read}}
+\newcommand\ttif{\code{if}}
+\newcommand\ttthen{\code{then}}
+\newcommand\ttelse{\code{else}}
+\newcommand\ttlet{\code{let}}
+\newcommand\ttnode{\code{node}}
+\newcommand\ttdo{\code{do}}
+\newcommand\ttdone{\code{done}}
+\newcommand\ttwhere{\code{where}}
+\newcommand\ttevery{\code{every}}
+\newcommand\ttreset{\code{reset}}
+
+%% teletype ----------------------------------------------------------------%%
+
+\newcommand\tta{\code{a}}  \newcommand\ttA{\code{A}}
+\newcommand\ttb{\code{b}}  \newcommand\ttB{\code{B}}
+\newcommand\ttc{\code{c}}  \newcommand\ttC{\code{C}}
+\newcommand\ttd{\code{d}}  \newcommand\ttD{\code{D}}
+\newcommand\tte{\code{e}}  \newcommand\ttE{\code{E}}
+\newcommand\ttf{\code{f}}  \newcommand\ttF{\code{F}}
+\newcommand\ttg{\code{g}}  \newcommand\ttG{\code{G}}
+\newcommand\tth{\code{h}}  \newcommand\ttH{\code{H}}
+\newcommand\tti{\code{i}}  \newcommand\ttI{\code{I}}
+\newcommand\ttj{\code{j}}  \newcommand\ttJ{\code{J}}
+\newcommand\ttk{\code{k}}  \newcommand\ttK{\code{K}}
+\newcommand\ttl{\code{l}}  \newcommand\ttL{\code{L}}
+\newcommand\ttm{\code{m}}  \newcommand\ttM{\code{M}}
+\newcommand\ttn{\code{n}}  \newcommand\ttN{\code{N}}
+\newcommand\tto{\code{o}}  \newcommand\ttO{\code{O}}
+\newcommand\ttp{\code{p}}  \newcommand\ttP{\code{P}}
+\newcommand\ttq{\code{q}}  \newcommand\ttQ{\code{Q}}
+\newcommand\ttr{\code{r}}  \newcommand\ttR{\code{R}}
+\newcommand\tts{\code{s}}  \newcommand\ttS{\code{S}}
+\newcommand\ttt{\code{t}}  \newcommand\ttT{\code{T}}
+\newcommand\ttu{\code{u}}  \newcommand\ttU{\code{U}}
+\newcommand\ttv{\code{v}}  \newcommand\ttV{\code{V}}
+\newcommand\ttw{\code{w}}  \newcommand\ttW{\code{W}}
+\newcommand\ttx{\code{x}}  \newcommand\ttX{\code{X}}
+\newcommand\tty{\code{y}}  \newcommand\ttY{\code{Y}}
+\newcommand\ttz{\code{z}}  \newcommand\ttZ{\code{Z}}
+\newcommand\ttvarin{\code{varin}}
+\newcommand\ttvarout{\code{varout}}
+\newcommand\ttsend{\code{send}}
+\newcommand\ttreceive{\code{receive}}
+\newcommand\ttmsg{\code{msg}}
+\newcommand\ttput{\code{put}}
+\newcommand\ttget{\code{get}}
+\newcommand\ttvar{\code{var}}
+\newcommand\ttdst{\code{dst}}
+\newcommand\ttsrc{\code{src}}
+\newcommand\ttexp{\code{exp}}
+\newcommand\ttloc{\code{loc}}
+\newcommand\ttid{\code{id}}
+\newcommand\ttnil{\code{nil}}
+\newcommand\ttnull{\code{null}}
+\newcommand\tttrue{\code{true}}
+\newcommand\ttfalse{\code{false}}
+\newcommand\ttfoo{\code{foo}}
+\newcommand\ttFOO{\code{FOO}}
+\newcommand\ttIN{\code{IN}}
+\newcommand\ttCK{\code{CK}}
+\newcommand\ttOUT{\code{OUT}}
+\newcommand\ttRES{\code{RES}}
+\newcommand\ttFILTER{\code{FILTER}}
+\newcommand\ttSLOW{\code{SLOW}}
+\newcommand\ttphi{\code{phi}}
+\newcommand\ttpsi{\code{psi}}
+\newcommand\tttau{\code{tau}}
+
+%% boxed minipages ---------------------------------------------------------%%
+
+%requires \usepackage{fancybox}
+\newenvironment{boxedminipage}%
+{\begin{Sbox}\begin{minipage}}%
+{\end{minipage}\end{Sbox}\fbox{\TheSbox}}
+
+%requires \usepackage{fancybox}
+\newenvironment{shadowminipage}%
+{\begin{Sbox}\begin{minipage}}%
+{\end{minipage}\end{Sbox}\shadowbox{\TheSbox}}
+
+\newcommand{\boxedpar}[1]{\noindent\fbox{\parbox{\textwidth}{#1}}}

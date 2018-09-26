@@ -1,0 +1,19 @@
+
+
+
+\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=11 cm, scale = 1, transform shape]
+
+\tikzstyle{accept} = [draw=blue!75,fill=blue!20]
+\tikzstyle{violate} = [draw=red!75,fill=red!20]
+
+\node[initial,state, accepting, accept] (A) {$q_0$};
+\node[state, violate]         (B) [right of=A]  {$q_v$};
+
+\path[->] (A) edge [loop above]     node [above]  {$\sum / \substack{!F \& (A == 0), \\ !R \& (A == 1), \\ !L \& (A == 2)}$} (A)
+		(A) edge [bend left]		node [above]  {$F \& (A == 0)$} (B)
+		(A) edge [right]			node [above]  {$R \& (A == 1)$} (B)
+		(A) edge [bend right]		node [below]  {$L \& (A == 2)$} (B)
+		(B) edge [loop above]     	node [above]  {$\sum$} (B)
+		;
+
+\end{tikzpicture}

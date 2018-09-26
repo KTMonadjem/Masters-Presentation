@@ -1,0 +1,19 @@
+
+
+
+\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=11 cm, scale = 1, transform shape]
+
+\tikzstyle{accept} = [draw=blue!75,fill=blue!20]
+\tikzstyle{violate} = [draw=red!75,fill=red!20]
+
+\node[initial,state, accepting, accept] (A) {$q_0$};
+\node[state, violate]         (B) [right of=A]  {$q_v$};
+
+\path[->] (A) edge [loop above]     node [above]  {$\sum / \substack{\{(B < 155), (B > 589), (B < 155), (B > 589), \\ C \& (W > 200), C \& (B + W > 589), \\ !C \& (W > 150), !C \& (B - W < 155)\}}$} (A)
+		(A) edge [bend left]		node [above]  {$\let\scriptstyle\textstyle\substack{(B < 155), \\ (B > 589)}$} (B)
+		(A) edge [right]			node [above]  {$\let\scriptstyle\textstyle\substack{C \& (W > 200), \\ C \& (B + W > 589)}$} (B)
+		(A) edge [bend right]	node [below]  {$\let\scriptstyle\textstyle\substack{!C \& (W > 150), \\ !C \& (B - W < 155)}$} (B)
+		(B) edge [loop above]     node [above]  {$\sum$} (B)
+		;
+
+\end{tikzpicture}
