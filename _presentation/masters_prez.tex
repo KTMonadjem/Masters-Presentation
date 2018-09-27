@@ -580,14 +580,6 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}\frametitle{Paper for IEEE journals}
-	\begin{block}{TO-DO}
-		\begin{myitemize}
-			\item 
-		\end{myitemize}
-	\end{block}
-\end{frame}
-
 \section{Results}
 \begin{frame}\frametitle{WCRT}
 	\begin{itemize}
@@ -617,7 +609,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame} \frametitle{SNNs}
+\begin{frame} \frametitle{Safe Neural Networks (SNNs) - AV system}
 	\begin{table}[t]
 		\centering
 		\caption{Design and overhead of the policies used in the AV system}
@@ -625,60 +617,51 @@
 		\begin{tabular}{|p{0.25\linewidth}|p{0.06\linewidth}|p{0.12\linewidth}|p{0.06\linewidth}|p{0.11\linewidth}|p{0.1\linewidth}|}
 			\hline Policy & States & Transitions & Timed & Execution Time (us) & Overhead (\%) \\ \hline   
 			%\multicolumn{6}{|p{0.70\linewidth}|}{\ac{AV}} \\ \hline
-			$None$ 						&  &  &  & 736 & 0 \\
-			$\varphi_{cnn}$ 			& 1 & 15 & No & 764 & 3.8 \\
-			$\varphi_{drive}$ 			& 1 & 4 & No & 740 & 0.54 \\
-			$\varphi_{car}$ 			& 1 & 7 & No & 774 & 5.1 \\
-			$\varphi_{ped}$ 			& 2 & 56 & Yes & 767 & 4.2 \\
+			$None$ 						& N/A & N/A & N/A & 736 & 0 \\ \hline
+			$\varphi_{cnn}$ 			& 1 & 15 & No & 764 & 3.8 \\ \hline
+			$\varphi_{drive}$ 			& 1 & 4 & No & 740 & 0.54 \\ \hline
+			$\varphi_{car}$ 			& 1 & 7 & No & 774 & 5.1 \\ \hline
+			$\varphi_{ped}$ 			& 2 & 56 & Yes & 767 & 4.2 \\ \hline
 			$\varphi_{cnn} \wedge \varphi_{drive} \wedge \varphi_{car} \wedge \varphi_{ped}$ 	
 			& 2 & 99 & Yes & 803 & 9.1 \\ \hline      
 		\end{tabular}
 	\end{table}
 \end{frame}
 
-\begin{frame} \frametitle{SNNs (cont.)}
-	\begin{table}[h]
-		\centering
-		\caption{Results of the AV system with and without the enforced policies}
-		\label{table:avenf1}
-		\begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
-			\hline Number of epochs trained & Percentage accidents & Average minutes to first accident & Average speed (km/h) & Percentage bad brakes \\ \hline
-			\multicolumn{5}{|p{0.75\linewidth}|}{Not enforced} \\ \hline
-			0 & 100	 & 3.21 & 98 & 19 \\
-			1 & 100 & 3.3 & 93 & 19 \\
-			10 & 100 & 3.8 & 81 & 57 \\
-			100 & 100 & 5.35 & 59 & 24 \\
-			1000 & 100 & 5.31 & 58 & 27 \\
-			10000 & 48.5 & 73.9 & 18 & 63 \\ 
-			80000 & 81.5 & 48 & 30.5 & ?? \\
-			100000 & 93.9 & 35 & 31.5 & 65 \\ \hline                     
-		\end{tabular}
-	\end{table}
-	\begin{myitemize}
+\begin{frame} \frametitle{AV System - Not Enforced Results}
+	\begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
+		\hline Number of epochs trained & Percentage accidents & Average minutes to first accident & Average speed (km/h) & Percentage bad brakes \\ \hline
+		0 & 100	 & 3.21 & 98 & 19 \\ \hline
+		1 & 100 & 3.3 & 93 & 19 \\ \hline
+		10 & 100 & 3.8 & 81 & 57 \\ \hline
+		100 & 100 & 5.35 & 59 & 24 \\ \hline
+		1000 & 100 & 5.31 & 58 & 27 \\  \hline
+		10000 & 48.5 & 73.9 & 18 & 63 \\ \hline
+		80000 & 81.5 & 48 & 30.5 & ?? \\ \hline
+		100000 & 93.9 & 35 & 31.5 & 65 \\ \hline                     
+	\end{tabular}
+
+	\begin{itemize}
 		\item Less than 50\% accidents for the 10,000 epochs trained system
-		\item 220 caused by collision from behind.
-		\item 265 otherwise.
-	\end{myitemize}
+		\begin{itemize}
+			\item 220 caused by collision from behind.
+			\item 265 otherwise.
+		\end{itemize}
+	\end{itemize}
 \end{frame}
-\begin{frame} \frametitle{SNNs (cont.)}
-	\begin{table}[h]
-		\centering
-		\caption{Results of the AV system with and without the enforced policies}
-		\label{table:avenf2}
-		\begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
-			\hline Number of epochs trained & Percentage accidents & Average minutes to first accident & Average speed (km/h) & Percentage bad brakes \\ \hline
-			\multicolumn{5}{|p{0.75\linewidth}|}{Enforced} \\ \hline
-			0 & 75.7 & 756 & 45 & 0.7 \\
-			1 & 70.2 & 828 & 47 & 4.2 \\
-			10 & 88.5 & 589 & 37 & 20 \\
-			100 & 79.5 & 726 & 41 & 17 \\
-			1000 & 80.5 & 710 & 40 & 18 \\
-			10000 & 63.6 & 910 & 30 & 27 \\ \hline                    
-		\end{tabular}
-	\end{table}
+\begin{frame} \frametitle{AV System - Enforced Results}
+	\begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
+		\hline Number of epochs trained & Percentage accidents & Average minutes to first accident & Average speed (km/h) & Percentage bad brakes \\ \hline
+		0 & 75.7 & 756 & 45 & 0.7 \\ \hline
+		1 & 70.2 & 828 & 47 & 4.2 \\ \hline
+		10 & 88.5 & 589 & 37 & 20 \\ \hline
+		100 & 79.5 & 726 & 41 & 17 \\ \hline
+		1000 & 80.5 & 710 & 40 & 18 \\ \hline
+		10000 & 63.6 & 910 & 30 & 27 \\ \hline                    
+	\end{tabular}
 \end{frame}
 
-\begin{frame} \frametitle{SNNs (cont.)}
+\begin{frame} \frametitle{AV System - Results}
 	\begin{figure}[t]
 		\centering
 		\scalebox{1}{\input{fig/av-graph.tex}}
@@ -686,14 +669,39 @@
 	\end{figure}
 \end{frame}
 
-\section{Conclusion}
-\begin{frame}\frametitle{Conclusion}
-	\begin{itemize}
-		\item 
-	\end{itemize}
+\begin{frame} \frametitle{AV System - Results}
+	\begin{myitemize}
+		\item Re-structured GA to produce better results.
+		\item The training sweet spot is around 10,000 epochs.
+		\item Over-training the system results in reduced performance.
+		\begin{myitemize}
+			\item Over-fitting training data.
+			\item GA fitness function not perfect.
+		\end{myitemize}
+		\item Over-training has no prominent affect on the enforced results.
+	\end{myitemize}
 \end{frame}
 
-\begin{frame}
+\section{Conclusion}
+\begin{frame}\frametitle{Future work}
+	\begin{myitemize}
+		\item \textbf{NB!} Finish SNN work for publishable paper
+		\begin{myitemize}
+			\item Update results.
+			\item Some reworking of current paper -- \textit{IEEE Journal}.
+			\item Add anything I have missed...
+			\item Submit to relevant journal.
+		\end{myitemize}	
+		\item Final Master's section
+		\begin{myitemize}
+			\item AV lane-changing and braking system -- physics added.
+			\item Jin's equations?
+			\item Specifications?
+		\end{myitemize}
+	\end{myitemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]	
 	\printbibliography
 \end{frame}
 
