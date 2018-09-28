@@ -573,41 +573,42 @@
 \begin{frame}\frametitle{Autonomous Vehicle (AV) working example}
 	\begin{block}{AV system}
 		\begin{myitemize}
-			\item Lots of TA marking...
+			\item Small amount of progress made, busy two weeks.
 			\item Training system with an increased number of epochs.
-			\item Step from 10,000 to 100,000.
+			\begin{myitemize}\item Step from 10,000 to 100,000.\end{myitemize}
+			\item Altered paper slightly as discussed.
 		\end{myitemize}
 	\end{block}
 \end{frame}
 
 \section{Results}
-\begin{frame}\frametitle{WCRT}
-	\begin{itemize}
-		\item WCRT tests were carried out on various, synchronous systems with SANNs.
-		\item ABRO example utilizing SANNs shown below.
-	\end{itemize}
-	\begin{table}[H]
-		\centering
-		\caption{WCRT results for AI version of ABRO}
-		\label{tbl:res-aibro}
-		\begin{tabular}{|l|l|l|}
-			\hline
-			Approach         & WCRT (ms) & WCET (ms)\\ \hline
-			Black-box        & 2.8  & 2.8  \\ 
-			Layer by layer   & 1.9  & 7.6 \\ 
-			Neuron by neuron & 1.8  & 7.2 \\ \hline
-		\end{tabular}
-	\end{table}
-\end{frame}
+%\begin{frame}\frametitle{WCRT}
+%	\begin{itemize}
+%		\item WCRT tests were carried out on various, synchronous systems with SANNs.
+%		\item ABRO example utilizing SANNs shown below.
+%	\end{itemize}
+%	\begin{table}[H]
+%		\centering
+%		\caption{WCRT results for AI version of ABRO}
+%		\label{tbl:res-aibro}
+%		\begin{tabular}{|l|l|l|}
+%			\hline
+%			Approach         & WCRT (ms) & WCET (ms)\\ \hline
+%			Black-box        & 2.8  & 2.8  \\ 
+%			Layer by layer   & 1.9  & 7.6 \\ 
+%			Neuron by neuron & 1.8  & 7.2 \\ \hline
+%		\end{tabular}
+%	\end{table}
+%\end{frame}
 
-\begin{frame}\frametitle{Meta neural networks}
-	\begin{itemize}
-		\item Using an meta neural network ensemble~\footcite{ensembleANN} of SANNs, it was shown that the combined accuracy of 3 SANNs was greater than the accuracy of any one SANN.
-		\item Increase of up to 10\% from individual SANN accuracy.
-		\item Retain synchronous semantics.
-		\item Potential for WCRT analysis. 
-	\end{itemize}
-\end{frame}
+%\begin{frame}\frametitle{Meta neural networks}
+%	\begin{itemize}
+%		\item Using an meta neural network ensemble~\footcite{ensembleANN} of SANNs, it was shown that the combined accuracy of 3 SANNs was greater than the accuracy of any one SANN.
+%		\item Increase of up to 10\% from individual SANN accuracy.
+%		\item Retain synchronous semantics.
+%		\item Potential for WCRT analysis. 
+%	\end{itemize}
+%\end{frame}
 
 \begin{frame} \frametitle{Safe Neural Networks (SNNs) - AV system}
 	\begin{table}[t]
@@ -652,13 +653,21 @@
 \begin{frame} \frametitle{AV System - Enforced Results}
 	\begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
 		\hline Number of epochs trained & Percentage accidents & Average minutes to first accident & Average speed (km/h) & Percentage bad brakes \\ \hline
-		0 & 75.7 & 756 & 45 & 0.7 \\ \hline
-		1 & 70.2 & 828 & 47 & 4.2 \\ \hline
-		10 & 88.5 & 589 & 37 & 20 \\ \hline
-		100 & 79.5 & 726 & 41 & 17 \\ \hline
-		1000 & 80.5 & 710 & 40 & 18 \\ \hline
-		10000 & 63.6 & 910 & 30 & 27 \\ \hline                    
+		0 & 75.7 & 93.2 & 45 & 0.7 \\ \hline
+		1 & 70.2 & 94.5 & 47 & 4.2 \\ \hline
+		10 & 88.5 & 91.91 & 37 & 20 \\ \hline
+		100 & 79.5 & 94.5 & 41 & 17 \\ \hline
+		1000 & 80.5 & 94.2 & 40 & 18 \\ \hline
+		10000 & 63.6 & 96.69 & 30 & 27 \\ \hline                    
 	\end{tabular}
+
+	\begin{itemize}
+		\item No accidents caused by fault of the vehicle.
+		\begin{itemize}
+			\item All caused by a collision from behind.
+		\end{itemize}
+		\item System managed to finish over 90\% of a run, on average, before the vehicle was hit from behind -- near perfect results.
+	\end{itemize}
 \end{frame}
 
 \begin{frame} \frametitle{AV System - Results}
