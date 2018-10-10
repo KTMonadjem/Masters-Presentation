@@ -621,7 +621,7 @@
 			$None$ 						& N/A & N/A & N/A & 736 & 0 \\ \hline
 			$\varphi_{cnn}$ 			& 1 & 15 & No & 764 & 3.8 \\ \hline
 			$\varphi_{drive}$ 			& 1 & 4 & No & 740 & 0.54 \\ \hline
-			$\varphi_{car}$ 			& 1 & 7 & No & 774 & 5.1 \\ \hline
+			$\varphi_{car}$ 			& 1 & 7 & No & 741 & 0.66 \\ \hline
 			$\varphi_{ped}$ 			& 2 & 56 & Yes & 767 & 4.2 \\ \hline
 			$\varphi_{cnn} \wedge \varphi_{drive} \wedge \varphi_{car} \wedge \varphi_{ped}$ 	
 			& 2 & 99 & Yes & 803 & 9.1 \\ \hline      
@@ -638,8 +638,7 @@
 		100 & 100 & 5.35 & 59 & 24 \\ \hline
 		1000 & 100 & 5.31 & 58 & 27 \\  \hline
 		10000 & 48.5 & 73.9 & 18 & 63 \\ \hline
-		80000 & 81.5 & 48 & 30.5 & ?? \\ \hline
-		100000 & 93.9 & 35 & 31.5 & 65 \\ \hline                     
+		100000 & 91.5 & 39 & 31.5 & 65 \\ \hline                   
 	\end{tabular}
 
 	\begin{itemize}
@@ -653,12 +652,13 @@
 \begin{frame} \frametitle{AV System - Enforced Results}
 	\begin{tabular}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
 		\hline Number of epochs trained & Percentage accidents & Average minutes to first accident & Average speed (km/h) & Percentage bad brakes \\ \hline
-		0 & 75.7 & 93.2 & 45 & 0.7 \\ \hline
-		1 & 70.2 & 94.5 & 47 & 4.2 \\ \hline
-		10 & 88.5 & 91.91 & 37 & 20 \\ \hline
-		100 & 79.5 & 94.5 & 41 & 17 \\ \hline
-		1000 & 80.5 & 94.2 & 40 & 18 \\ \hline
-		10000 & 63.6 & 96.69 & 30 & 27 \\ \hline                    
+		0 & 75.7 & 75.6 & 45 & 0.7 \\ \hline 
+		1 & 70.2 & 82.8 & 47 & 4.2 \\ \hline 
+		10 & 88.5 & 58.9 & 37 & 20 \\ \hline 
+		100 & 79.5 & 72.6 & 41 & 17 \\ \hline 
+		1000 & 80.5 & 71.0 & 40 & 18 \\ \hline 
+		10000 & 64 & 97.07 & 27.5 & 27 \\ \hline   
+		100000 & 57 & 97.14 & 29 & 28 \\ \hline                   
 	\end{tabular}
 
 	\begin{itemize}
@@ -691,23 +691,43 @@
 	\end{myitemize}
 \end{frame}
 
-\section{Conclusion}
-\begin{frame}\frametitle{Future work}
+\begin{frame} \frametitle{Keras Parser}
 	\begin{myitemize}
-		\item \textbf{NB!} Finish SNN work for publishable paper
+		\item Installed and learned the basics of Keras w/ Tensorflow back-end.
 		\begin{myitemize}
-			\item Update results.
-			\item Some reworking of current paper -- \textit{IEEE Journal}.
-			\item Add anything I have missed...
-			\item Submit to relevant journal.
-		\end{myitemize}	
-		\item Final Master's section
+			\item Created and trained basic XOR MLP.
+		\end{myitemize}
+		\item Created a parser that takes in a JSON model file and a HDF5 weight file.
 		\begin{myitemize}
-			\item AV lane-changing and braking system -- physics added.
-			\item Jin's equations?
-			\item Specifications?
+			\item Parses the model structure and weights and maps them to a Python class.
+			\item Functionality to view the structure and weights.
+			\item Can generate a C array of weights that can be used to init a C ANN.
+		\end{myitemize}
+		\item Successfully parsed and mapped a trained MLP (XOR) to C.
+		\begin{myitemize}
+			\item Correlation coefficient: 99.99942\%
 		\end{myitemize}
 	\end{myitemize}
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}\frametitle{Future work -- Final Master's sections}
+	\begin{block}{Import Keras ANNs into C + Esterel SNNs}
+		\begin{myitemize}
+			\item Compiler that takes the parsed Python class and generates SNNs.
+			\begin{myitemize}
+				\item SNNs in C.
+				\item Synchronous semantics -- Esterel, Pret-C, other?
+			\end{myitemize}
+			\item Parse files and compile to SNN.
+		\end{myitemize}
+	\end{block}
+	\begin{block}{Realistic AV model}
+		\begin{myitemize}
+			\item Breaking and lane changing.
+			\item Physics incorporated.
+		\end{myitemize}
+	\end{block}
 \end{frame}
 
 \begin{frame}[allowframebreaks]	
