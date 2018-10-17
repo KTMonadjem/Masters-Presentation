@@ -710,12 +710,63 @@
 	\end{myitemize}
 \end{frame}
 
+\begin{frame} \frametitle{Keras Parser}
+	\begin{block}{What is important to parse?}
+		\begin{myitemize}
+			\item Number of layers.
+			\item Type of layer (dense, convolutional, dropout, etc).
+			\item Activation functions (ReLu, sigmoid, etc).
+			\item Number and type of inputs and outputs.
+			\item Number of weights per layer.
+			\item Weight values.
+		\end{myitemize}
+	\end{block}
+\end{frame}
+
+\begin{frame} \frametitle{New case study -- IoT intrusion detection}
+	\begin{block}{IoT is cyber-physical and (possibly) safety-critical}
+		\begin{myitemize}
+			\item IoT is a network of physical devices (i.e. CPS).
+			\item Extends the Internet beyond standard devices.
+			\item Vulnerable to intrusion -- safety implications.
+			\item Various types of intrusion detection algorithms.
+			\begin{myitemize}
+				\item Host-based.
+				\item Network-based.
+			\end{myitemize}
+			\item Propose SNNs for intrusion detection on IoT devices.
+		\end{myitemize}
+	\end{block}
+\end{frame}
+
+\begin{frame} \frametitle{Table -- ANN systems}
+	\begin{table}[]
+		\centering
+		\resizebox{\textwidth}{!}{%
+			\begin{tabular}{|l|l|l|l|l|l|l|}
+				\hline
+				Name                     & Source & Deadline strictness & Consequence of missed deadline & Examples of failure & Real world interactivity & Network types \\ \hline
+				Autonomous vehicle  & & & & & & \\ \hline
+				Heart disease detection & & & & & & \\ \hline 
+				Smart grid & & & & & & \\ \hline 
+				Behaviour modeling & & & & & & \\ \hline 
+				Malware detection & & & & & & \\ \hline 
+				Forex & & & & & & \\ \hline
+				Smart factory & & & & & & \\ \hline
+			\end{tabular}%
+		}
+		\caption{My caption}
+		\label{my-label}
+	\end{table}
+\end{frame}
+
 \section{Conclusion}
 \begin{frame}\frametitle{Future work -- Final Master's sections}
 	\begin{block}{Import Keras ANNs into C + Esterel SNNs}
 		\begin{myitemize}
 			\item Compiler that takes the parsed Python class and generates SNNs.
 			\begin{myitemize}
+				\item In Python (Tensorflow and Keras in Python).
 				\item SNNs in C.
 				\item Synchronous semantics -- Esterel, Pret-C, other?
 			\end{myitemize}
