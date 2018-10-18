@@ -723,23 +723,66 @@
 	\end{block}
 \end{frame}
 
-\begin{frame} \frametitle{New case study -- IoT intrusion detection}
-	\begin{block}{IoT is cyber-physical and (possibly) safety-critical}
+%\begin{frame} \frametitle{New case study -- IoT intrusion detection}
+%	\begin{block}{IoT is cyber-physical and (possibly) safety-critical}
+%		\begin{myitemize}
+%			\item IoT is a network of physical devices (i.e. CPS).
+%			\item Extends the Internet beyond standard devices.
+%			\item Vulnerable to intrusion -- safety implications.
+%			\item Various types of intrusion detection algorithms.
+%			\begin{myitemize}
+%				\item Host-based.
+%				\item Network-based.
+%			\end{myitemize}
+%			\item Propose SNNs for intrusion detection on IoT devices.
+%		\end{myitemize}
+%	\end{block}
+%\end{frame}
+
+\begin{frame} \frametitle{New case study -- Drone control}
+	\begin{block}{Avalanche victim rescue drone~\footcite{dickensheets2015}}
 		\begin{myitemize}
-			\item IoT is a network of physical devices (i.e. CPS).
-			\item Extends the Internet beyond standard devices.
-			\item Vulnerable to intrusion -- safety implications.
-			\item Various types of intrusion detection algorithms.
+			\item Autonomous drone to locate avalanche victims by following a radio signal.
+			\item Safety critical system.
 			\begin{myitemize}
-				\item Host-based.
-				\item Network-based.
+				\item Failure to find the victim can lead to their death.
+				\item Crashing of the drone can be dangerous to unaware people.
 			\end{myitemize}
-			\item Propose SNNs for intrusion detection on IoT devices.
+			\item Drone navigation can be improved and made safe using SNNs.
+			\begin{myitemize}
+				\item Advanced controller network.
+				\item Prevent unsafe behaviour.
+			\end{myitemize}
 		\end{myitemize}
 	\end{block}
 \end{frame}
 
-\begin{frame} \frametitle{Table -- ANN systems}
+\begin{frame} \frametitle{New case study -- Drone control}
+	\begin{block}{Avalanche victim rescue drone~\footcite{dickensheets2015}}
+		\begin{myitemize}
+			\item Location of radio signal origin unknown.
+			\item ANN to find radio signal and navigate obstacles.
+			\item RE for obstacle avoidance and navigation.
+			\begin{myitemize}
+				\item Drone must not crash.
+				\item Drone must go in the correct direction.
+			\end{myitemize}
+			\item ANNs to recognise objects.
+		\end{myitemize}
+	\end{block}
+\end{frame}
+
+\begin{frame} \frametitle{New case study -- Drone control}
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=\linewidth]{fig/drone-sys.pdf}
+		\caption{Block diagram for the drone safety system. \label{fig:dronesys}}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame} \frametitle{Table -- possible ANN systems}
+	\vspace{2cm}
 	\begin{table}[]
 		\centering
 		\resizebox{\textwidth}{!}{%
@@ -747,12 +790,13 @@
 				\hline
 				Name                     & Source & Deadline strictness & Consequence of missed deadline & Examples of failure & Real world interactivity & Network types \\ \hline
 				Autonomous vehicle  & & & & & & \\ \hline
-				Heart disease detection & & & & & & \\ \hline 
+				Disease detection & & & & & & \\ \hline 
 				Smart grid & & & & & & \\ \hline 
 				Behaviour modeling & & & & & & \\ \hline 
 				Malware detection & & & & & & \\ \hline 
 				Forex & & & & & & \\ \hline
 				Smart factory & & & & & & \\ \hline
+				Internet of Things & & & & & & \\ \hline
 			\end{tabular}%
 		}
 		\caption{My caption}
