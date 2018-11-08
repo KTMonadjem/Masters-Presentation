@@ -739,47 +739,123 @@
 %	\end{block}
 %\end{frame}
 
-\begin{frame} \frametitle{New case study -- Drone control}
-	\begin{block}{Avalanche victim rescue drone~\footcite{dickensheets2015}}
+%\begin{frame} \frametitle{New case study -- Drone control}
+%	\begin{block}{Avalanche victim rescue drone~\footcite{dickensheets2015}}
+%		\begin{myitemize}
+%			\item Autonomous drone to locate avalanche victims by following a radio signal.
+%			\item Safety critical system.
+%			\begin{myitemize}
+%				\item Failure to find the victim can lead to their death.
+%				\item Crashing of the drone can be dangerous to unaware people.
+%			\end{myitemize}
+%			\item Drone navigation can be improved and made safe using SNNs.
+%			\begin{myitemize}
+%				\item Advanced controller network.
+%				\item Prevent unsafe behaviour.
+%			\end{myitemize}
+%		\end{myitemize}
+%	\end{block}
+%\end{frame}
+
+%\begin{frame} \frametitle{New case study -- Drone control}
+%	\begin{block}{Avalanche victim rescue drone~\footcite{dickensheets2015}}
+%		\begin{myitemize}
+%			\item Location of radio signal origin unknown.
+%			\item ANN to find radio signal and navigate obstacles.
+%			\item RE for obstacle avoidance and navigation.
+%			\begin{myitemize}
+%				\item Drone must not crash.
+%				\item Drone must go in the correct direction.
+%			\end{myitemize}
+%			\item ANNs to recognise objects.
+%		\end{myitemize}
+%	\end{block}
+%\end{frame}
+
+%\begin{frame} \frametitle{New case study -- Drone control}
+%	\begin{figure}[t]
+%		\centering
+%		\includegraphics[width=\linewidth]{fig/drone-sys.pdf}
+%		\caption{Block diagram for the drone safety system. \label{fig:dronesys}}
+%	\end{figure}
+%\end{frame}
+
+%\begin{frame} \frametitle{New case study -- Drone control}
+%	\begin{figure}[t]
+%		\centering
+%		\scalebox{0.7}{\input{fig/drone-rte.tex}}
+%		\caption{Enforcer policy for the autonomous drone control \label{fig:dronerte}}
+%	\end{figure}
+%\end{frame}
+
+\begin{frame} \frametitle{New case study -- Sensor fusion}
+	\begin{block}{Dealing with neural network input perturbations using sensor fusion}
 		\begin{myitemize}
-			\item Autonomous drone to locate avalanche victims by following a radio signal.
-			\item Safety critical system.
+			\item Autonomous vehicle prediction system.
+			\item Uses sensor fusion to increase prediction accuracy.
 			\begin{myitemize}
-				\item Failure to find the victim can lead to their death.
-				\item Crashing of the drone can be dangerous to unaware people.
-			\end{myitemize}
-			\item Drone navigation can be improved and made safe using SNNs.
-			\begin{myitemize}
-				\item Advanced controller network.
-				\item Prevent unsafe behaviour.
+				\item Done synchronously using Meta Neural Networks.
+				\item Uses synchronous runtime enforcement.
+				\item Formal and timing guarantees can be provided.
 			\end{myitemize}
 		\end{myitemize}
 	\end{block}
 \end{frame}
 
-\begin{frame} \frametitle{New case study -- Drone control}
-	\begin{block}{Avalanche victim rescue drone~\footcite{dickensheets2015}}
-		\begin{myitemize}
-			\item Location of radio signal origin unknown.
-			\item ANN to find radio signal and navigate obstacles.
-			\item RE for obstacle avoidance and navigation.
-			\begin{myitemize}
-				\item Drone must not crash.
-				\item Drone must go in the correct direction.
-			\end{myitemize}
-			\item ANNs to recognise objects.
-		\end{myitemize}
+\begin{frame} \frametitle{New case study -- Sensor fusion}
+	\begin{block}{The Meta Neural Network in question}
+		\begin{figure}[t]
+			\centering
+			\includegraphics[scale=0.5]{fig/MNN.pdf}
+			\caption{Block diagram showing the Meta Neural Network ensemble. \label{fig:mnn}}
+		\end{figure}
 	\end{block}
 \end{frame}
 
-\begin{frame} \frametitle{New case study -- Drone control}
-	\begin{figure}[t]
-		\centering
-		\includegraphics[width=\linewidth]{fig/drone-sys.pdf}
-		\caption{Block diagram for the drone safety system. \label{fig:dronesys}}
-	\end{figure}
+\begin{frame} \frametitle{New case study -- Sensor fusion}
+	\begin{block}{The enforced policy in question}
+		\begin{myitemize}
+			\item L -- Object detected by the LiDAR
+			\item O -- Object detected by the MNN
+			\item C -- Confidence of the object detected by the MNN
+		\end{myitemize}
+		\vspace{-0.6cm}
+		\begin{figure}[t]
+			\centering
+			\scalebox{0.8}{\input{fig/sign-rte.tex}}
+			\caption{Enforcer policy for the AV prediction \label{fig:signrte}}
+		\end{figure}
+	\end{block}
 \end{frame}
 
+\begin{frame} \frametitle{New case study -- Sensor fusion}
+	\begin{block}{The Safe Synchronous Neural Network as a whole}
+		\begin{figure}[t]
+			\centering
+			\includegraphics[width=\linewidth]{fig/SSNN.pdf}
+			\caption{Figure showing the SSNN used in the AV prediction system \label{fig:snn}}
+		\end{figure}
+	\end{block}
+\end{frame}
+
+\begin{frame} \frametitle{New case study -- Preliminary results}
+	\begin{block}{Basic enforcer that enforcers MNN and LiDAR output}
+		\begin{table}[]
+			\centering
+			\resizebox{\textwidth}{!}{%
+				\begin{tabular}{|l|l|l|l|l|l|}
+					\hline
+					Class misclassified  & Person & Vehicle & Street sign & Nothing of relevance & Total \\ \hline
+					\multicolumn{6}{|l|}{Number of misclassifications (\%)}                               \\ \hline
+						Without the enforcer & 0.37   & 6.43    & 1.37        & 2.18                 & 10.35 \\ \hline
+						With the enforcer    & 0.16   & 2.08    & 1.57        & 0.63                 & 4.44  \\ \hline
+					\end{tabular}%
+				}
+				\caption{Table showing preliminary results of the AV prediction SNN}
+				\label{tbl:snn-res}
+			\end{table}
+	\end{block}
+\end{frame}
 
 \begin{frame} \frametitle{Table -- possible ANN systems}
 	\vspace{2cm}
@@ -797,6 +873,7 @@
 				Forex & & & & & & \\ \hline
 				Smart factory & & & & & & \\ \hline
 				Internet of Things & & & & & & \\ \hline
+				Drone control & & & & & & \\ \hline
 			\end{tabular}%
 		}
 		\caption{My caption}
