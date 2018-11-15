@@ -1,35 +1,56 @@
 
 
-\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=6 cm, scale = 1, transform shape]
+\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=4 cm, scale = 1, transform shape]
 
 \tikzstyle{accept} = [draw=blue!75,fill=blue!20]
 \tikzstyle{violate} = [draw=red!75,fill=red!20]
 
-\node[initial,state, accepting, accept] (A) {$q_{safe}$};
-\node[state, violate]         (B) [right of=A]  {$q_v$};
+\node[initial,state, accepting, accept] (A) {$q_{auto}$};
+\node[state, violate]         (B) [right of=A, xshift=5em]  {$q_v$};
+\node[state, accepting, accept] (C) [below of=B, yshift=4em] {$q_{manual}$};
 
 \path[->] 
 		(A) edge [loop above]       node [above, xshift=-1em]  
 		{
 			\scriptsize$\let\scriptstyle\textstyle\substack{
-			\sum~\textbackslash~\\
-			\Big((L~=~0)~\&~(\overline{O~=~0})~\&~(S~<~90)~|~\\~
-			(L~=~1)~\&~(\overline{O~=~1})~\&~(S~<~90)~|~\\
-			(L~=~2)~\&~(\overline{O~=~2})~\&~(S~<~90)\Big)}$
+				\sum~\textbackslash~
+				\Big(~
+					(~P~|~C~|~N~|~S)~\&~(~C~<~99~)
+				~\Big)}$
 		} (A)
 		
-		(A) edge [left]		node [below]  
+		(A) edge [left]		node [above]  
 		{
 			\scriptsize$\let\scriptstyle\textstyle\substack{
-			(L~=~0)~\&~(\overline{O~=~0})~\&~(S~<~90)~|~\\~
-			(L~=~1)~\&~(\overline{O~=~1})~\&~(S~<~90)~|~\\
-			(L~=~2)~\&~(\overline{O~=~2})~\&~(S~<~90)}$
+				(~P~|~C~|~N~|~S)~\&~(~C~<~99~)
+			}$
 		} (B)
 	
-		(B) edge [loop above]		node [above]  
+		(B) edge [below] node [right]
 		{
-			\scriptsize$\sum$
-		} (B)
+			\scriptsize$\let\scriptstyle\textstyle\substack{t~:=~0}$
+		} (C)
+	
+		(C) edge [loop right]		node [right]  
+		{
+			\scriptsize$t~<~10$
+		} (C)
+	
+		(C) edge [loop below]		node [below]  
+		{
+			\scriptsize$\let\scriptstyle\textstyle\substack{
+				(~P~|~C~|~N~|~S)~\&~(~C~<~99~)~\\~t~:=~0~
+			}$
+		} (C)
+	
+		(C) edge [left]		node [below, xshift=-8em]  
+		{
+			\scriptsize$\let\scriptstyle\textstyle\substack{
+				\bigg(~\sum~\textbackslash~
+					\Big(~(~P~|~C~|~N~|~S)~\&~(~C~<~99~)~\Big)
+				~\bigg)~\&~\\~
+				t~>=~5}$
+		} (A)
 		;
 
 \end{tikzpicture}
