@@ -5,8 +5,17 @@
 %\input{global.macros}
 \input{preamble.tex}
 
-\usepackage[style=verbose,backend=biber]{biblatex}
-\bibliography{references.bib}
+%\usepackage[style=verbose,backend=biber]{biblatex}
+%\bibliography{references.bib}
+
+
+\bibliographystyle{apalike}
+\setbeamertemplate{frametitle continuation}[from second]
+\setbeamercolor*{bibliography entry title}{fg=black}
+\setbeamercolor*{bibliography entry author}{fg=black}
+\setbeamercolor*{bibliography entry location}{fg=black}
+\setbeamercolor*{bibliography entry note}{fg=black}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
 
 \usepackage{listings}
 \lstset{language=[LaTeX]TeX,
@@ -252,13 +261,13 @@
 		\begin{myitemize}
 			\item Unit testing
 			\item Strict guidelines~\nocite{ANNDevModel1999}
-			\item Verification algorithms~\footcite{safe_verify}\footcite{reluplex}\footcite{ai2} 
+			\item Verification algorithms~\cite{safe_verify}\cite{reluplex}\cite{ai2} 
 		\end{myitemize}
 	\end{block}
 \end{frame}
 
 \begin{frame}
-	\begin{block}{Safety Critical Artificial Neural Networks (SCANNs) \footcite{scann}}
+	\begin{block}{Safety Critical Artificial Neural Networks (SCANNs) \cite{scann}}
 		\begin{myitemize}
 			\item Fuzzy Self-Organising Maps (FSOMs)
 			\item Rule extraction and insertion
@@ -277,7 +286,7 @@
 
 \section{Motivating example}
 \begin{frame} \frametitle{Uber autonomous vehicle fatal accident} 
-	\begin{block}{What happened?}\footcite{uber1}
+	\begin{block}{What happened?}\cite{uber1}
 		\begin{myitemize}
 			\item Uber autonomous vehicle.
 			\item Vehicle collided with jaywalking pedestrian.
@@ -302,7 +311,7 @@
 
 \section{Solution: Utilising Synchronous Semantics}
 
-\begin{frame} \frametitle{Introduction to Synchronous Semantics~\footcite{benveniste2003synchronous}}
+\begin{frame} \frametitle{Introduction to Synchronous Semantics~\cite{benveniste2003synchronous}}
 	\begin{myitemize}
 		\item No chance of deadlocks occurring during runtime.
 		\item Loops are bounded.
@@ -462,7 +471,7 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame} \frametitle{Runtime Enforcement~\footcite{SyncRTE2017}}
+\begin{frame} \frametitle{Runtime Enforcement~\cite{SyncRTE2017}}
 	\begin{myitemize}
 		\item Monitors and corrects a system's I/O.
 		\item Cannot delay events or block execution.
@@ -545,11 +554,11 @@
 %		\item Need partial simulation.
 %		\item Ensemble must be trained off of a realistic data set
 %		\begin{itemize}
-%			\item VOC image dataset 2008. \footcite{voc2008}
+%			\item VOC image dataset 2008. \cite{voc2008}
 %		\end{itemize}
 %		\item LiDAR must be simulated
 %		\begin{itemize}
-%			\item KITTI autonomous vehicle dataset. \footcite{kitti}
+%			\item KITTI autonomous vehicle dataset. \cite{kitti}
 %			\item Hours of data driving an autonomous vehicle.
 %			\item LiDAR, cameras and GPS.
 %		\end{itemize}
@@ -603,7 +612,7 @@
 
 %\begin{frame}\frametitle{Meta neural networks}
 %	\begin{itemize}
-%		\item Using an meta neural network ensemble~\footcite{ensembleANN} of SANNs, it was shown that the combined accuracy of 3 SANNs was greater than the accuracy of any one SANN.
+%		\item Using an meta neural network ensemble~\cite{ensembleANN} of SANNs, it was shown that the combined accuracy of 3 SANNs was greater than the accuracy of any one SANN.
 %		\item Increase of up to 10\% from individual SANN accuracy.
 %		\item Retain synchronous semantics.
 %		\item Potential for WCRT analysis. 
@@ -740,7 +749,7 @@
 %\end{frame}
 
 %\begin{frame} \frametitle{New case study -- Drone control}
-%	\begin{block}{Avalanche victim rescue drone~\footcite{dickensheets2015}}
+%	\begin{block}{Avalanche victim rescue drone~\cite{dickensheets2015}}
 %		\begin{myitemize}
 %			\item Autonomous drone to locate avalanche victims by following a radio signal.
 %			\item Safety critical system.
@@ -758,7 +767,7 @@
 %\end{frame}
 
 %\begin{frame} \frametitle{New case study -- Drone control}
-%	\begin{block}{Avalanche victim rescue drone~\footcite{dickensheets2015}}
+%	\begin{block}{Avalanche victim rescue drone~\cite{dickensheets2015}}
 %		\begin{myitemize}
 %			\item Location of radio signal origin unknown.
 %			\item ANN to find radio signal and navigate obstacles.
@@ -788,100 +797,200 @@
 %	\end{figure}
 %\end{frame}
 
-\begin{frame} \frametitle{New case study -- Sensor fusion}
-	\begin{block}{Dealing with neural network input perturbations using sensor fusion}
-		\begin{myitemize}
-			\item Autonomous vehicle prediction system.
-			\item Uses sensor fusion to increase prediction accuracy.
-			\begin{myitemize}
-				\item Done synchronously using Meta Neural Networks.
-				\item Uses synchronous runtime enforcement.
-				\item Formal and timing guarantees can be provided.
-			\end{myitemize}
-		\end{myitemize}
-	\end{block}
+
+
+\begin{frame}\frametitle{Final thesis chapter -- Introduction \& Background}
+\begin{myitemize}
+	\item Deep ANNs with large, complex inputs are very hard to verify~\cite{Gehr2018AI2SA}.
+	\item These ANNs, namely CNNs, are susceptible to input perturbations~\cite{Gehr2018AI2SA, ann-pert}, further increasing the difficulty of verification.
+	\item Previously introduced RE (Runtime Enforcement) techniques cannot handle these complex inputs.
+	\item Propose sensor fusion and a MNN ensemble.
+	\begin{myitemize}
+		\item Sensor fusion~\cite{SensorFusion2017} allows RE based on the inputs to the system.
+		\item MNN increases prediction accuracy by using multiple, different CNNs for the same job.
+	\end{myitemize}
+\end{myitemize}
 \end{frame}
 
-\begin{frame} \frametitle{New case study -- Sensor fusion}
-	\begin{block}{The Meta Neural Network in question}
-		\begin{figure}[t]
-			\centering
-			\includegraphics[scale=0.5]{fig/MNN.pdf}
-			\caption{Block diagram showing the Meta Neural Network ensemble. \label{fig:mnn}}
-		\end{figure}
-	\end{block}
+
+\begin{frame}\frametitle{Final thesis chapter -- Case Study}
+\begin{myitemize}
+\item Nothing
+\end{myitemize}
 \end{frame}
 
-\begin{frame} \frametitle{New case study -- Sensor fusion}
-	\begin{block}{The enforced policy in question}
-		\begin{myitemize}
-			\item $P$ -- Misclassification of a person relative to the LiDAR output.
-			\item $C$ -- Misclassification of a car relative to the LiDAR output.
-			\item $N$ -- Misclassification of nothing relative to the LiDAR output.
-			\item $S$ -- Misclassification of a sign relative to the LiDAR output.
-			\item $C$ -- Confidence of the object.
-			\item $t$ -- Tick counter for manual control.
-		\end{myitemize}
-	\end{block}
+
+
+
+\begin{frame} \frametitle{Final thesis chapter -- Sensor fusion}
+\begin{block}{Dealing with neural network input perturbations using sensor fusion}
+\begin{myitemize}
+\item Autonomous vehicle prediction system.
+\item Uses sensor fusion to increase prediction accuracy.
+\begin{myitemize}
+	\item Done synchronously using Meta Neural Networks.
+	\item Uses synchronous runtime enforcement.
+	\item Formal and timing guarantees can be provided.
+\end{myitemize}
+\end{myitemize}
+\end{block}
 \end{frame}
 
-\begin{frame} \frametitle{New case study -- Sensor fusion}
-	\begin{block}{The enforced policy in question}
-		\begin{figure}[t]
-			\centering
-			\scalebox{0.8}{\input{fig/sign-rte.tex}}
-			\caption{Enforcer policy for the AV prediction \label{fig:signrte}}
-		\end{figure}
-	\end{block}
+\begin{frame} \frametitle{Final thesis chapter -- Sensor fusion}
+\begin{block}{The Meta Neural Network in question}
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.5]{fig/MNN.pdf}
+\caption{Block diagram showing the Meta Neural Network ensemble. \label{fig:mnn}}
+\end{figure}
+\end{block}
 \end{frame}
 
-\begin{frame} \frametitle{New case study -- Sensor fusion}
-	\begin{block}{The Safe Synchronous Neural Network as a whole}
-		\begin{figure}[t]
-			\centering
-			\includegraphics[width=\linewidth]{fig/SSNN.pdf}
-			\caption{Figure showing the SSNN used in the AV prediction system \label{fig:snn}}
-		\end{figure}
-	\end{block}
+\begin{frame} \frametitle{Final thesis chapter -- Sensor fusion}
+\begin{block}{The enforced policy in question}
+\begin{myitemize}
+\item $P$ -- Misclassification of a person relative to the LiDAR output.
+\item $C$ -- Misclassification of a car relative to the LiDAR output.
+\item $N$ -- Misclassification of nothing relative to the LiDAR output.
+\item $S$ -- Misclassification of a sign relative to the LiDAR output.
+\item $C$ -- Confidence of the object.
+\item $t$ -- Tick counter for manual control.
+\end{myitemize}
+\end{block}
 \end{frame}
 
-\begin{frame} \frametitle{New case study -- Preliminary results}
-	\begin{block}{Basic enforcer that enforcers MNN and LiDAR output}
-		\begin{table}[]
-			\centering
-			\resizebox{\textwidth}{!}{%
-				\begin{tabular}{|l|l|l|l|l|l|}
-					\hline
-					Class misclassified  & Person & Vehicle & Street sign & Nothing of relevance & Total \\ \hline
-					\multicolumn{6}{|l|}{Number of misclassifications (\%)}                               \\ \hline
-						Without the enforcer & 0.44   & 3.59    & 3.15        & 2.18                 & 9.36 \\ \hline
-						With the enforcer    & 0.97   & 1.09    & 0.6        & 2.97                 & 5.63  \\ \hline
-					\end{tabular}%
-				}
-				\caption{Table showing preliminary results of the AV prediction SNN using perfect images}
-				\label{tbl:snn-res}
-			\end{table}
-	\end{block}
+\begin{frame} \frametitle{Final thesis chapter -- Sensor fusion}
+\begin{block}{The enforced policy in question}
+\begin{figure}[t]
+\centering
+\scalebox{0.8}{\input{fig/sign-rte.tex}}
+\caption{Enforcer policy for the AV prediction \label{fig:signrte}}
+\end{figure}
+\end{block}
 \end{frame}
 
-\begin{frame} \frametitle{New case study -- Preliminary results}
-	\begin{block}{Basic enforcer that enforcers MNN and LiDAR output, input images are perturbed}
-		\begin{table}[]
-			\centering
-			\resizebox{\textwidth}{!}{%
-				\begin{tabular}{|l|l|l|l|l|l|}
-					\hline
-					Class misclassified  & Person & Vehicle & Street sign & Nothing of relevance & Total \\ \hline
-					\multicolumn{6}{|l|}{Number of misclassifications (\%)}                               \\ \hline
-					Without the enforcer & 0.35 & 5.42    & 5.26 & 25.63  & 36.66 \\ \hline
-					With the enforcer    & 0.9 & 1.07 & 0.65   & 23.15   & 25.77  \\ \hline
-				\end{tabular}%
-			}
-			\caption{Table showing preliminary results of the AV prediction SNN using perturbed images}
-			\label{tbl:snn-respert}
-		\end{table}
-	\end{block}
+\begin{frame} \frametitle{Final thesis chapter -- Sensor fusion}
+\begin{block}{The Safe Synchronous Neural Network as a whole}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig/SSNN.pdf}
+\caption{Figure showing the SSNN used in the AV prediction system \label{fig:snn}}
+\end{figure}
+\end{block}
 \end{frame}
+
+\begin{frame} \frametitle{Final thesis chapter -- Results}
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{0.17\linewidth}||p{0.17\linewidth}|p{0.17\linewidth}|p{0.17\linewidth}|p{0.17\linewidth}|}
+\hline
+Object classified & No. of misclassifications (\%) & Caught misclassifications (\%) & False negatives (\%) & Total remaining misclassifications (\%) \\ \hline
+Person & 17.01 & 17.01 & 0.00 & 0.00 \\ \hline
+Vehicle & 15.85 & 15.85 & 0.00 & 0.00 \\ \hline
+Sign & 54.46 & 54.46 & 4.84 & 4.84 \\ \hline
+Nothing & 7.83 & 7.83 & 0.00 & 0.00 \\ \hline
+All & 95.16 & 95.16 & 4.84 & 4.84 \\ \hline
+\end{tabular}%
+}
+\caption{Table showing the worst results of the AV prediction SNN using the original images, trained for 0 epochs}
+\label{tbl:sign-res1}
+\end{table}
+\end{frame}
+
+\begin{frame} \frametitle{Final thesis chapter -- Results}
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{0.17\linewidth}||p{0.17\linewidth}|p{0.17\linewidth}|p{0.17\linewidth}|p{0.17\linewidth}|}
+\hline
+Object classified & No. of misclassifications (\%) & Caught misclassifications (\%) & False negatives (\%) & Total remaining misclassifications (\%) \\ \hline
+Person & 1.00 & 0.21 & 0.53 & 1.32 \\ \hline
+Vehicle & 6.26 & 5.63 & 0.44 & 1.07 \\ \hline
+Sign & 2.62 & 0.44 & 1.02 & 3.20 \\ \hline
+Nothing & 2.50 & 2.27 & 0.12 & 0.35 \\ \hline
+All & 12.38 & 8.55 & 2.11 & 5.93 \\ \hline
+\end{tabular}%
+}
+\caption{Table showing results of the AV prediction SNN using the original images, trained for 10000 epochs}
+\label{tbl:sign-res10000}
+\end{table}
+\end{frame}
+
+\begin{frame} \frametitle{Final thesis chapter -- Results}
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{0.17\linewidth}||p{0.17\linewidth}|p{0.17\linewidth}|p{0.17\linewidth}|p{0.17\linewidth}|}
+\hline
+Object classified & No. of misclassifications (\%) & Caught misclassifications (\%) & False negatives (\%) & Total remaining misclassifications (\%) \\ \hline
+Person & 17.01 & 17.01 & 0.00 & 0.00 \\ \hline
+Vehicle & 15.85 & 15.85 & 0.00 & 0.00 \\ \hline
+Sign & 54.46 & 54.46 & 4.84 & 4.84 \\ \hline
+Nothing & 7.83 & 7.83 & 0.00 & 0.00 \\ \hline
+All & 95.16 & 95.16 & 4.84 & 4.84 \\ \hline
+\end{tabular}%
+}
+\caption{Table showing the worst results of the AV prediction SNN using perturbed images, trained for 0 epochs}
+\label{tbl:sign-respert1}
+\end{table}
+\end{frame}
+
+\begin{frame} \frametitle{Final thesis chapter -- Results}
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{0.17\linewidth}||p{0.17\linewidth}|p{0.17\linewidth}|p{0.17\linewidth}|p{0.17\linewidth}|}
+\hline
+Object classified & No. of misclassifications (\%) & Caught misclassifications (\%) & False negatives (\%) & Total remaining misclassifications (\%) \\ \hline
+Person & 3.43 & 0.60 & 0.56 & 3.38 \\ \hline
+Vehicle & 10.78 & 8.57 & 0.23 & 2.43 \\ \hline
+Sign & 38.08 & 31.91 & 1.39 & 7.56 \\ \hline
+Nothing & 5.61 & 4.80 & 0.09 & 0.90 \\ \hline
+All & 57.89 & 45.89 & 2.27 & 14.28 \\ \hline
+\end{tabular}%
+}
+\caption{Table showing results of the AV prediction SNN using perturbed images, trained for 10000 epochs}
+\label{tbl:sign-respert10000}
+\end{table}
+\end{frame}
+
+
+\begin{frame} \frametitle{Final thesis chapter -- Results}
+\begin{figure}[t]
+\centering
+\scalebox{0.5}{\input{fig/sign-graph.tex}}
+\caption{Line graph showing the performance of the system trained over an increasing amount of epochs using unperturbed inputs \label{fig:sign-graph}}
+\end{figure}
+\end{frame}
+
+\begin{frame} \frametitle{Final thesis chapter -- Results}
+\begin{figure}[t]
+\centering
+\scalebox{0.5}{\input{fig/sign-graphpert.tex}}
+\caption{Line graph showing the number of misclassifications made by the system with perturbed inputs \label{fig:sign-graphpert}}
+\end{figure}
+\end{frame}
+
+\begin{frame} \frametitle{Final thesis chapter -- Results}
+\begin{figure}[t]
+\centering
+\scalebox{0.5}{\input{fig/sign-graphboth.tex}}
+\caption{Line graph showing the number of misclassifications made by the system with all inputs \label{fig:sign-graphboth}}
+\end{figure}	
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{frame} \frametitle{Table -- possible ANN systems}
 	\vspace{2cm}
@@ -911,35 +1020,24 @@
 \begin{frame}\frametitle{Future work -- Final Master's sections}
 	\begin{block}{Import Keras ANNs into C + Esterel SNNs}
 		\begin{myitemize}
-			\item Compiler that takes the parsed Python class and generates SNNs.
-			\begin{myitemize}
-				\item In Python (Tensorflow and Keras in Python).
-				\item SNNs in C.
-				\item Synchronous semantics -- Esterel, Pret-C, other?
-			\end{myitemize}
-			\item Parse files and compile to SNN.
+			\item 
 		\end{myitemize}
 	\end{block}
 	\begin{block}{Realistic AV model}
 		\begin{myitemize}
-			\item Breaking and lane changing.
-			\item Physics incorporated.
+			\item 
 		\end{myitemize}
 	\end{block}
 \end{frame}
 
-\begin{frame}[allowframebreaks]	
-	\printbibliography
-\end{frame}
-
-%\begin{frame} \frametitle{References}
-%	\vspace{-16pt}
-%	\begin{block}{}
-%		\fontsize{5}{0}
-		%\bibliographystyle{ieeetr}
-%		\bibliography{../_paper/main} 
-%	\end{block}
+%\begin{frame}[allowframebreaks]	
+%	\printbibliography
 %\end{frame}
+
+\begin{frame}[allowframebreaks] \frametitle{References}
+	\bibliographystyle{ieeetr}
+	\bibliography{references} 
+\end{frame}
 
 \appendix
 

@@ -1,3 +1,7 @@
+% This file was created with JabRef 2.10.
+% Encoding: UTF8
+
+
 @Electronic{FORTE,
   Title                    = {{FORTE}},
   Author                   = {{4DIAC}},
@@ -1379,7 +1383,7 @@ and Walker, David},
   Month                    = {July},
   Pages                    = {160-169},
 
-  Abstract                 = {Multicore processors provide better power-performance trade-offs compared to single-core processors. Consequently, they are rapidly penetrating market segments which are both safety critical and hard real-time in nature. However, designing time-predictable embedded applications over multicores remains a considerable challenge. This paper proposes the ForeC language for the deterministic parallel programming of embedded applications on multicores. ForeC extends C with a minimal set of constructs adopted from synchronous languages. To guarantee the worst-case performance of ForeC programs, we offer a very precise reachability-based timing analyzer. To the best of our knowledge, this is the first attempt at the efficient and deterministic parallel programming of multicores using a synchronous C-variant. Experimentation with large multicore programs revealed an average over-estimation of only 2 percent for the computed worst-case execution times (WCETs). By reducing our representation of the program's state-space, we reduced the analysis time for the largest program (with 43, 695 reachable states) by a factor of 342, to only 7 seconds.},
+  Abstract                 = {Multicore processors provide better power-performance trade-offs compared to single-core processors. Consequently, they are rapidly penetrating market segments which are both safety critical and hard real-time in nature. However, designing time-predictable embedded applications over multicores remains a considerable challenge. This paper proposes the ForeC language for the deterministic parallel programming of embedded applications on multicores. ForeC extends C with a minimal set of constructs adopted from synchronous languages. To guarantee the worst-case performance of ForeC programs, we offer a very precise reachability-based timing analyzer. To the best of our knowledge, this is the first attempt at the efficient and deterministic parallel programming of multicores using a synchronous C-variant. Experimentation with large multicore programs revealed an average over-estimation of only 2% for the computed worst-case execution times (WCETs). By reducing our representation of the program's state-space, we reduced the analysis time for the largest program (with 43, 695 reachable states) by a factor of 342, to only 7 seconds.},
   Doi                      = {10.1109/ACSD.2013.19},
   ISSN                     = {1550-4808},
   Keywords                 = {C language;embedded systems;multiprocessing systems;parallel programming;reachability analysis;ForeC language;ForeC programs;WCET;average over-estimation;deterministic parallel programming;embedded applications;large-multicore programs;minimal construct set;multicore processors;power-performance;program state-space representation;reachability-based timing analyzer;reachable states;safety-critical embedded systems;synchronous C-language;synchronous languages;timing analysis time reduction;worst-case execution times;worst-case performance;Instruction sets;Multicore processing;Robots;Semantics;Synchronization;WCET analysis;parallel programming;synchronous languages}
@@ -1502,7 +1506,7 @@ and Walker, David},
   Pages                    = {37 - 55},
   Volume                   = {238},
 
-  Abstract                 = {Esterel programs have traditionally been compiled to software code for general purpose processors or to hardware netlists. This paper, instead, proposes a reactive processor for the direct execution of Esterel. This intermediate approach offers the same flexibility as software compilation, while at the same time, providing much better code size and execution time. The proposed architecture, called STARPro, is a pipelined, multithreaded, reactive processor that provides native support for the direct execution of Esterel. \{STARPro\} manages Esterel threads and their scheduling, and also features a hardware preemption unit to assist the handling of the abort constructs in Esterel. In addition to the proposed architecture, we have also developed a new intermediate format called \{UCCFGsd\} (unrolled concurrent control-flow graph with surface and depth) to represent the structure of an Esterel program in our compiler. \{UCCFGsd\} closely resembles the Esterel source, and it has also been designed with Esterel hardware support in mind, allowing a straight forward translation into \{STARPro\} assembly instructions. We have compared the performance of \{STARPro\} against a recent reactive architecture and found an average of 37 percent speed-up in worst-case reaction times, and 38 percent in average-case reaction times. },
+  Abstract                 = {Esterel programs have traditionally been compiled to software code for general purpose processors or to hardware netlists. This paper, instead, proposes a reactive processor for the direct execution of Esterel. This intermediate approach offers the same flexibility as software compilation, while at the same time, providing much better code size and execution time. The proposed architecture, called STARPro, is a pipelined, multithreaded, reactive processor that provides native support for the direct execution of Esterel. \{STARPro\} manages Esterel threads and their scheduling, and also features a hardware preemption unit to assist the handling of the abort constructs in Esterel. In addition to the proposed architecture, we have also developed a new intermediate format called \{UCCFGsd\} (unrolled concurrent control-flow graph with surface and depth) to represent the structure of an Esterel program in our compiler. \{UCCFGsd\} closely resembles the Esterel source, and it has also been designed with Esterel hardware support in mind, allowing a straight forward translation into \{STARPro\} assembly instructions. We have compared the performance of \{STARPro\} against a recent reactive architecture and found an average of 37% speed-up in worst-case reaction times, and 38% in average-case reaction times. },
   Doi                      = {http://dx.doi.org/10.1016/j.entcs.2008.01.005},
   ISSN                     = {1571-0661},
   Keywords                 = {Compilation}
@@ -1580,6 +1584,8 @@ and Walker, David},
   Journal                  = {, 2003, Second Edition.},
   Organization             = {International Standard IEC 61131-3}
 }
+
+% Encoding: UTF-8
 
 
 @InProceedings{AirplaneWcet,
@@ -2881,6 +2887,19 @@ and Walker, David},
 	Month                    = jan,
 	URL                      = {http://timeme.io/blokide-examples/},
 	Year                     = {2016}
+}
+
+@InProceedings{TimingParallelMulticore,
+	Title                    = {Programming and Timing Analysis of Parallel Programs on Multicores},
+	Author                   = {E. Yip and P. S. Roop and M. Biglari-Abhari and A. Girault},
+	Booktitle                = {2013 13th International Conference on Application of Concurrency to System Design},
+	Year                     = {2013},
+	Month                    = {July},
+	Pages                    = {160-169},
+	Abstract                 = {Multicore processors provide better power-performance trade-offs compared to single-core processors. Consequently, they are rapidly penetrating market segments which are both safety critical and hard real-time in nature. However, designing time-predictable embedded applications over multicores remains a considerable challenge. This paper proposes the ForeC language for the deterministic parallel programming of embedded applications on multicores. ForeC extends C with a minimal set of constructs adopted from synchronous languages. To guarantee the worst-case performance of ForeC programs, we offer a very precise reachability-based timing analyzer. To the best of our knowledge, this is the first attempt at the efficient and deterministic parallel programming of multicores using a synchronous C-variant. Experimentation with large multicore programs revealed an average over-estimation of only 2% for the computed worst-case execution times (WCETs). By reducing our representation of the program's state-space, we reduced the analysis time for the largest program (with 43, 695 reachable states) by a factor of 342, to only 7 seconds.},
+	DOI                      = {10.1109/ACSD.2013.19},
+	ISSN                     = {1550-4808},
+	Keywords                 = {C language;embedded systems;multiprocessing systems;parallel programming;reachability analysis;ForeC language;ForeC programs;WCET;average over-estimation;deterministic parallel programming;embedded applications;large-multicore programs;minimal construct set;multicore processors;power-performance;program state-space representation;reachability-based timing analyzer;reachable states;safety-critical embedded systems;synchronous C-language;synchronous languages;timing analysis time reduction;worst-case execution times;worst-case performance;Instruction sets;Multicore processing;Robots;Semantics;Synchronization;WCET analysis;parallel programming;synchronous languages}
 }
 
 @InProceedings{TOUESS,
