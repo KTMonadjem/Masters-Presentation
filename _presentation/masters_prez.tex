@@ -840,18 +840,29 @@
 
 \begin{frame}\frametitle{Final thesis chapter -- Methodology}
 	\begin{myitemize}
-		\item System consists of:
+		\item System is simulated, target system is not ideal to implement.
+		\item LiDAR accuracy is taken from~\cite{lidarFusion}.
+		\item Images taken from VOC~\cite{pascal-voc-2012} and GTSRB~\cite{Stallkamp2012-gtsrb} datasets.
 		\begin{myitemize}
-			\item Complex, Meta Neural Network ensemble to classify the input images.
-			\item LiDAR to support the MNN.
-			\item Safety policy to prevent unsafe classifications.
-			\item Runtime Enforcer to enforce safety policy.
+			\item 8 different sign types taken from GTSRB.
+			\item People, cars and nothing taken from VOC.
 		\end{myitemize}
+		\item Image pixels have 7\% chance of perturbation, changing that pixel to a random RGB colour.
 	\end{myitemize}
 \end{frame}
 
+\begin{frame} \frametitle{Final thesis chapter -- Overall system}
+\begin{block}{The Safe Synchronous Neural Network as a whole}
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=\linewidth]{fig/SSNN.pdf}
+		\caption{Figure showing the SSNN used in the AV prediction system \label{fig:snn}}
+	\end{figure}
+\end{block}
+\end{frame}
+
 \begin{frame} \frametitle{Final thesis chapter -- MNN}
-	\begin{block}{The Meta Neural Network in question}
+	\begin{block}{The Meta Neural Network}
 		\begin{figure}[t]
 			\centering
 			\includegraphics[scale=0.5]{fig/MNN.pdf}
@@ -860,37 +871,27 @@
 	\end{block}
 \end{frame}
 
-\begin{frame} \frametitle{Final thesis chapter -- Safety policy}
-	\begin{block}{The enforced policy in question}
-		\begin{myitemize}
-			\item $P$ -- Misclassification of a person relative to the LiDAR output.
-			\item $C$ -- Misclassification of a car relative to the LiDAR output.
-			\item $N$ -- Misclassification of nothing relative to the LiDAR output.
-			\item $S$ -- Misclassification of a sign relative to the LiDAR output.
-			\item $C$ -- Confidence of the object.
-			\item $t$ -- Tick counter for manual control.
-		\end{myitemize}
-	\end{block}	
-\end{frame}
-
 \begin{frame} \frametitle{Final thesis chapter -- Safety policy (cont.)}
 	\begin{block}{The enforced policy in question}
 		\begin{figure}[t]
 			\centering
-			\scalebox{0.8}{\input{fig/sign-rte.tex}}
-			\caption{Enforcer policy for the AV prediction \label{fig:signrte}}
+			\scalebox{0.7}{\input{fig/sign-rte.tex}}
+			\caption{Enforced policy for the AV prediction \label{fig:signrte}}
 		\end{figure}
 	\end{block}
 \end{frame}
 
-\begin{frame} \frametitle{Final thesis chapter -- Overall system}
-	\begin{block}{The Safe Synchronous Neural Network as a whole}
-		\begin{figure}[t]
-			\centering
-			\includegraphics[width=\linewidth]{fig/SSNN.pdf}
-			\caption{Figure showing the SSNN used in the AV prediction system \label{fig:snn}}
-		\end{figure}
-	\end{block}
+\begin{frame} \frametitle{Final thesis chapter -- Safety policy}
+\begin{block}{The enforced policy in question}
+	\begin{myitemize}
+		\item $P$ -- Misclassification of a person relative to the LiDAR output.
+		\item $C$ -- Misclassification of a car relative to the LiDAR output.
+		\item $N$ -- Misclassification of nothing relative to the LiDAR output.
+		\item $S$ -- Misclassification of a sign relative to the LiDAR output.
+		\item $C$ -- Confidence of the object.
+		\item $t$ -- Tick counter for manual control.
+	\end{myitemize}
+\end{block}	
 \end{frame}
 
 \begin{frame} \frametitle{Final thesis chapter -- Results}
@@ -907,7 +908,7 @@
 			All & 95.16 & 95.16 & 4.84 & 4.84 \\ \hline
 		\end{tabular}%
 		}
-		\caption{Table showing the worst results of the AV prediction SNN using the original images, trained for 0 epochs}
+		\caption{Table showing the worst results of the AV prediction SSNN using the original images, trained for 0 epochs}
 		\label{tbl:sign-res1}
 	\end{table}
 \end{frame}
@@ -926,7 +927,7 @@
 			All & 12.38 & 8.55 & 2.11 & 5.93 \\ \hline
 		\end{tabular}%
 		}
-		\caption{Table showing results of the AV prediction SNN using the original images, trained for 10000 epochs}
+		\caption{Table showing results of the AV prediction SSNN using the original images, trained for 10000 epochs}
 		\label{tbl:sign-res10000}
 	\end{table}
 \end{frame}
@@ -945,7 +946,7 @@
 			All & 95.16 & 95.16 & 4.84 & 4.84 \\ \hline
 		\end{tabular}%
 		}
-		\caption{Table showing the worst results of the AV prediction SNN using perturbed images, trained for 0 epochs}
+		\caption{Table showing the worst results of the AV prediction SSNN using perturbed images, trained for 0 epochs}
 		\label{tbl:sign-respert1}
 	\end{table}
 \end{frame}
@@ -964,7 +965,7 @@
 			All & 57.89 & 45.89 & 2.27 & 14.28 \\ \hline
 			\end{tabular}%
 		}
-		\caption{Table showing results of the AV prediction SNN using perturbed images, trained for 10000 epochs}
+		\caption{Table showing results of the AV prediction SSNN using perturbed images, trained for 10000 epochs}
 		\label{tbl:sign-respert10000}
 	\end{table}
 \end{frame}
@@ -1048,42 +1049,39 @@
 
 
 
-\begin{frame} \frametitle{Table -- possible ANN systems}
-	\vspace{2cm}
-	\begin{table}[]
-		\centering
-		\resizebox{\textwidth}{!}{%
-			\begin{tabular}{|l|l|l|l|l|l|l|}
-				\hline
-				Name                     & Source & Deadline strictness & Consequence of missed deadline & Examples of failure & Real world interactivity & Network types \\ \hline
-				Autonomous vehicle  & & & & & & \\ \hline
-				Disease detection & & & & & & \\ \hline 
-				Smart grid & & & & & & \\ \hline 
-				Behaviour modeling & & & & & & \\ \hline 
-				Malware detection & & & & & & \\ \hline 
-				Forex & & & & & & \\ \hline
-				Smart factory & & & & & & \\ \hline
-				Internet of Things & & & & & & \\ \hline
-				Drone control & & & & & & \\ \hline
-			\end{tabular}%
-		}
-		\caption{My caption}
-		\label{my-label}
-	\end{table}
-\end{frame}
+%\begin{frame} \frametitle{Table -- possible ANN systems}
+%	\vspace{2cm}
+%	\begin{table}[]
+%		\centering
+%		\resizebox{\textwidth}{!}{%
+%			\begin{tabular}{|l|l|l|l|l|l|l|}
+%				\hline
+%				Name                     & Source & Deadline strictness & Consequence of missed deadline & Examples of failure & Real world interactivity & Network types \\ \hline
+%				Autonomous vehicle  & & & & & & \\ \hline
+%				Disease detection & & & & & & \\ \hline 
+%				Smart grid & & & & & & \\ \hline 
+%				Behaviour modeling & & & & & & \\ \hline 
+%				Malware detection & & & & & & \\ \hline 
+%				Forex & & & & & & \\ \hline
+%				Smart factory & & & & & & \\ \hline
+%				Internet of Things & & & & & & \\ \hline
+%				Drone control & & & & & & \\ \hline
+%			\end{tabular}%
+%		}
+%		\caption{My caption}
+%		\label{my-label}
+%	\end{table}
+%\end{frame}
 
 \section{Conclusion}
-\begin{frame}\frametitle{Future work -- Final Master's sections}
-	\begin{block}{Import Keras ANNs into C + Esterel SNNs}
-		\begin{myitemize}
-			\item 
-		\end{myitemize}
-	\end{block}
-	\begin{block}{Realistic AV model}
-		\begin{myitemize}
-			\item 
-		\end{myitemize}
-	\end{block}
+\begin{frame}\frametitle{Future work -- Thesis}
+	\begin{myitemize}
+		\item Complete Chapter 5 (latest work).
+		\item Complete Chapter 2 (Background).
+		\item Complete Chapter 3 and 4 (Timed ANNs and RE of ANNs).
+		\item Complete Chapter 6 (Conclusion).
+		\item Complete Chapter 1 (Introduction).
+	\end{myitemize}
 \end{frame}
 
 %\begin{frame}[allowframebreaks]	
